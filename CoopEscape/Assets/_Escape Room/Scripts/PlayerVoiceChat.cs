@@ -53,16 +53,23 @@ public class PlayerVoiceChat : NetworkBehaviour
                 voiceResult = SteamUser.GetVoice(true, destBuffer, 1024, out uint bytesWritten);
                 if(voiceResult == EVoiceResult.k_EVoiceResultOK &&  bytesWritten > 0)
                 {
-                    SendVoiceToOtherPlayer(otherPlayerID ,bytesWritten);
+                    SendVoiceToOtherPlayer(bytesWritten);
                 }
             }
         }
     }
 
-    [TargetRpc(requireServer: false)]
-    private void SendVoiceToOtherPlayer(PlayerID playerID, uint bytesWritten, RPCInfo info = default)
+    [ServerRpc]
+    private void SendVoiceToOtherPlayer(uint bytesWritten, RPCInfo info = default)
     {
-        Debug.Log($"player id {playerID}");
-        Debug.Log($"Sender: {info.sender}");
+        Debug.Log($"Send voice to other player server : {info.sender}");
+        SendVoiceToOtherPlayer_Target(otherPlayerID, bytesWritten);
+    }
+
+    [TargetRpc]
+    private void SendVoiceToOtherPlayer_Target(PlayerID target, uint bytesWritten, RPCInfo info = default)
+    {
+        Debug.Log($"send voice to other player target {target}");
+        Debug.Log($"send voice to other player target, Sender: {info.sender}");
     }
 }
