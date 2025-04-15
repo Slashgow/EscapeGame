@@ -51,11 +51,11 @@ public class PlayerVoiceChat : NetworkBehaviour
     private void SendVoiceToOtherPlayer(PlayerID? target, byte[] data, uint bytesWritten, RPCInfo info = default)
     {
         Debug.Log($"Send voice to other player server : {info.sender}");
-        SendVoiceToOtherPlayer_Target(target, data, bytesWritten);
+        SendVoiceToOtherPlayer_Target((PlayerID)target, data, bytesWritten);
     }
 
     [TargetRpc]
-    private void SendVoiceToOtherPlayer_Target(PlayerID? target, byte[] data, uint bytesWritten, RPCInfo info = default)
+    private void SendVoiceToOtherPlayer_Target(PlayerID target, byte[] data, uint bytesWritten, RPCInfo info = default)
     {
         Debug.Log($"send voice to other player target {target}");
         Debug.Log($"send voice to other player target, Sender: {info.sender}");
