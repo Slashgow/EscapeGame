@@ -31,6 +31,7 @@ public class FirstPersonController : NetworkBehaviour
         base.OnSpawned();
 
         enabled = isOwner;
+
         if(!isOwner)
             Destroy(mainCamera.gameObject);
     }

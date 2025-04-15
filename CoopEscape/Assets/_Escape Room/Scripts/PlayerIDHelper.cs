@@ -1,21 +1,46 @@
+
+using System.Collections.Generic;
+using System.Linq;
 using PurrNet;
 using UnityEngine;
 
-public class PlayerIDHelper : MonoBehaviour
+public class PlayerIDHelper : MonoSingleton<PlayerIDHelper>
 {
-    private void Awake()
+    private PlayerID? otherPlayerID;
+    private GameObject otherPlayerGameObject;
+    private AudioSource otherPlayerAudioSource;
+
+    private  List<PlayerReference> players = new List<PlayerReference>();
+
+    public void AddPlayerReference(PlayerReference playerReference) => players.Add(playerReference);
+
+    public PlayerID? GetOtherPlayerID(PlayerID? callerPlayerID)
     {
-        Debug.Log("player id controller awake");
-        NetworkManager.main.onPlayerJoined += Main_onPlayerJoined;
+        if(otherPlayerID == null)
+        {
+            otherPlayerID = players.First(playerReference => playerReference.PlayerID != callerPlayerID).PlayerID;
+            return otherPlayerID;
+        }
+        return otherPlayerID;
+       
+    }
+    public GameObject GetOtherPlayerGameObject(PlayerID? callerPlayerID)
+    {
+        if(otherPlayerAudioSource == null)
+        {
+            otherPlayerGameObject = players.First(playerReference => playerReference.PlayerID != callerPlayerID).Player;
+            return otherPlayerGameObject;
+        }
+        return otherPlayerGameObject;
     }
 
-    private void OnDestroy()
+    public AudioSource GetOtherPlayerAudioSource(PlayerID? callerPlayerID)
     {
-        NetworkManager.main.onPlayerJoined -= Main_onPlayerJoined;
-    }
-
-    private void Main_onPlayerJoined(PlayerID player, bool isReconnect, bool asServer)
-    {
-        Debug.Log("player joined");
+        if (otherPlayerAudioSource == null)
+        {
+            otherPlayerAudioSource = players.First(playerReference => playerReference.PlayerID != callerPlayerID).Player.GetComponent<AudioSource>();
+            return otherPlayerAudioSource;
+        }
+        return otherPlayerAudioSource;
     }
 }
