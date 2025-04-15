@@ -1,4 +1,4 @@
-using System;
+using System.Linq;
 using PurrNet;
 using Steamworks;
 using UnityEngine;
@@ -9,6 +9,8 @@ public class PlayerVoiceChat : NetworkBehaviour
     private PlayerInputHandler playerInputHandler;
 
     private bool isPushToTalkRecording;
+
+    private PlayerID otherPlayerID;
 
     protected override void OnSpawned()
     {
@@ -21,6 +23,16 @@ public class PlayerVoiceChat : NetworkBehaviour
     {
         if (!isPushToTalkRecording && playerInputHandler.PushToTalkTriggered)
         {
+            Debug.Log(otherPlayerID.ToString());
+            if (otherPlayerID == PlayerID.Server)
+            {
+                otherPlayerID = networkManager.players.FirstOrDefault(playerId => playerId != this.localPlayer);
+                Debug.Log(otherPlayerID.ToString());
+                if (otherPlayerID ==  PlayerID.Server)
+                    return;
+            }
+               
+
             SteamUser.StartVoiceRecording();
             Debug.Log("Start Recording");
             isPushToTalkRecording = true;
@@ -41,17 +53,15 @@ public class PlayerVoiceChat : NetworkBehaviour
                 voiceResult = SteamUser.GetVoice(true, destBuffer, 1024, out uint bytesWritten);
                 if(voiceResult == EVoiceResult.k_EVoiceResultOK &&  bytesWritten > 0)
                 {
-                    SendVoiceToOtherPlayer(bytesWritten);
+                    SendVoiceToOtherPlayer(otherPlayerID ,bytesWritten);
                 }
             }
         }
     }
 
-    [ObserversRpc]
-    private void SendVoiceToOtherPlayer(uint bytesWritten)
+    [TargetRpc]
+    private void SendVoiceToOtherPlayer(PlayerID playerID, uint bytesWritten)
     {
-
-
         Debug.Log("Receiving voice");
     }
 }
