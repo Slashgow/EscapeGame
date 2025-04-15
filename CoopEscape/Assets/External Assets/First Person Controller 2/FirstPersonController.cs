@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using PurrNet;
 using UnityEngine;
 
-public class FirstPersonController : MonoBehaviour
+public class FirstPersonController : NetworkBehaviour
 {
     [Header("Movement Speeds")]
     [SerializeField] private float walkSpeed = 3.0f;
@@ -24,6 +25,16 @@ public class FirstPersonController : MonoBehaviour
     private Vector3 currentMovement;
     private float verticalRotation;
     private float CurrentSpeed => walkSpeed * (playerInputHandler.SprintTriggered ? sprintMultiplier : 1);
+
+    protected override void OnSpawned()
+    {
+        base.OnSpawned();
+
+        enabled = isOwner;
+        if(!isOwner)
+            Destroy(mainCamera.gameObject);
+    }
+
 
     // Start is called before the first frame update
     void Start()

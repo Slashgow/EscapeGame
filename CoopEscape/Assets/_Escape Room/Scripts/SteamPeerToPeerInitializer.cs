@@ -7,6 +7,9 @@ public class SteamPeerToPeerInitializer : MonoBehaviour
     [SerializeField]
     private SteamTransport steamTransport;
 
+    [SerializeField]
+    private bool debugInitializeSteam;
+
     private LobbyDataHolder lobbyDataHolder;
 
     private void Awake()

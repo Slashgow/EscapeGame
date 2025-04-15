@@ -27,7 +27,7 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "cb01f270-2a95-4073-89ba-7aaf064c24be",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -36,7 +36,16 @@
                     "name": "Sprint",
                     "type": "Button",
                     "id": "aace5f83-5b70-4e60-a6e8-d6eb1235e9bc",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PushToTalk",
+                    "type": "Button",
+                    "id": "57800048-698b-47ad-a931-57b93edfc6ec",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -128,6 +137,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "20810dca-75f1-40e3-bf70-9b2850a9f23d",
+                    "path": "<Keyboard>/v",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PushToTalk",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
