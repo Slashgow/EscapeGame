@@ -59,7 +59,7 @@ public class PlayerVoiceChat : NetworkBehaviour
         }
     }
 
-    [TargetRpc]
+    [TargetRpc(requireServer: false)]
     private void SendVoiceToOtherPlayer(PlayerID playerID, uint bytesWritten)
     {
         Debug.Log("Receiving voice");
