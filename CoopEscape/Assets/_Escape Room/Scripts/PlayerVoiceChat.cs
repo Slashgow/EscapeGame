@@ -43,6 +43,7 @@ public class PlayerVoiceChat : NetworkBehaviour
         }
         else if (PlayerIDHelper.Instance.DistanceBetweenPlayer() < distanceToRecordProximityChat)
         {
+            Debug.Log("min distance OK");
             HandleVoiceRecording(true);
         }
     }
@@ -50,6 +51,7 @@ public class PlayerVoiceChat : NetworkBehaviour
     private void HandleVoiceRecording(bool writeOnSenderAudioSource)
     {
         EVoiceResult voiceResult = SteamUser.GetAvailableVoice(out uint compressed);
+        Debug.Log($"voice result : {voiceResult.ToString()}");  
         if (voiceResult == EVoiceResult.k_EVoiceResultOK && compressed > 1024)
         {
             Debug.Log(compressed);
