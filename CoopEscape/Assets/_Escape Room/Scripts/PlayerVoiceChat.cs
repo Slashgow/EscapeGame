@@ -34,7 +34,8 @@ public class PlayerVoiceChat : NetworkBehaviour
         }
         else if(isPushToTalkRecording && !playerInputHandler.PushToTalkTriggered)
         {
-            SteamUser.StopVoiceRecording();
+            if(!isProximityChatRecording)
+                SteamUser.StopVoiceRecording();
             Debug.Log("Stop Recording");
             isPushToTalkRecording = false;
         }
