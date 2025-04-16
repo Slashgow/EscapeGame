@@ -1,0 +1,1013 @@
+fileFormatVersion: 2
+guid: 873cb9afcd0be0343ad706142a095dc7
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Mutant Run
+      takeName: mixamo.com
+      internalID: -203655887218126122
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: Chimp
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftEye
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightEye
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftHandMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftHandMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftHandMiddle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftHandRing1
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftHandRing2
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftHandRing3
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftHandPinky1
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftHandPinky2
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_LeftHandPinky3
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightHandMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightHandMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightHandMiddle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightHandRing1
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightHandRing2
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightHandRing3
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightHandPinky1
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightHandPinky2
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_RightHandPinky3
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chimp_Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: singe@Mutant Run(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: BoneRoot
+      parentName: singe@Mutant Run(Clone)
+      position: {x: -0.0029080203, y: -0.05733427, z: -0.15627119}
+      rotation: {x: -0.5719521, y: 0.0230885, z: 0.037103493, w: 0.81912214}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RootNode(0)
+      parentName: BoneRoot
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp
+      parentName: RootNode(0)
+      position: {x: 0.0103564765, y: -0.23846327, z: 0.08675103}
+      rotation: {x: 0.40481904, y: -0.039853465, z: -0.0051031676, w: 0.91351366}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_Hips
+      parentName: Chimp
+      position: {x: -0.000001, y: 0.357228, z: 0.02601}
+      rotation: {x: -0.00069027767, y: -0.0000008726644, z: -6.0238087e-10, w: 0.99999976}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftUpLeg
+      parentName: Chimp_Hips
+      position: {x: -0.089099996, y: -0.034417, z: 0}
+      rotation: {x: -0.19737102, y: -0.25630805, z: 0.94622356, w: 0.0034476968}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftLeg
+      parentName: Chimp_LeftUpLeg
+      position: {x: 0.018455999, y: 0.141408, z: 0.05628}
+      rotation: {x: 0.06697321, y: -0.021346519, z: -0.044283133, w: 0.99654305}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftFoot
+      parentName: Chimp_LeftLeg
+      position: {x: 0.016574, y: 0.134131, z: -0.047266997}
+      rotation: {x: 0.14412537, y: -0.05133313, z: 0.096803, w: 0.9834745}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftToeBase
+      parentName: Chimp_LeftFoot
+      position: {x: 0.01605, y: 0.035862997, z: 0.15922199}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Foot01_Floor01
+      parentName: Chimp_LeftToeBase
+      position: {x: -0.09315699, y: 0.092368, z: -0.023559}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Foot01_Floor04
+      parentName: Chimp_LeftToeBase
+      position: {x: 0.133702, y: 0.092384, z: -0.023506999}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftFootExtraFinger1
+      parentName: Chimp_LeftFoot
+      position: {x: -0.052683, y: 0.040707998, z: 0.041406997}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftFootExtraFinger2
+      parentName: Chimp_LeftFootExtraFinger1
+      position: {x: 0.019966, y: -0.003637, z: 0.050914995}
+      rotation: {x: 0.000000026145864, y: -0.0000012704486, z: -5.300088e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftFootExtraFinger3
+      parentName: Chimp_LeftFootExtraFinger2
+      position: {x: 0.001789, y: 0, z: 0.034505997}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Foot01_Floor02
+      parentName: Chimp_LeftFoot
+      position: {x: -0.077106, y: 0.06, z: 0.144132}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Foot01_Floor03
+      parentName: Chimp_LeftFoot
+      position: {x: -0.077107, y: 0.06, z: -0.047075}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Foot01_Floor05
+      parentName: Chimp_LeftFoot
+      position: {x: 0.14975299, y: 0.06, z: 0.14412999}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Foot01_Floor06
+      parentName: Chimp_LeftFoot
+      position: {x: 0.149751, y: 0.06, z: -0.047076996}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_Spine
+      parentName: Chimp_Hips
+      position: {x: -0, y: 0.081301, z: 0}
+      rotation: {x: 0.20989516, y: -0.048855267, z: -0.03409623, w: 0.9759071}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_Spine1
+      parentName: Chimp_Spine
+      position: {x: -0.000012, y: 0.083418, z: -0.014792}
+      rotation: {x: 0.1709664, y: 0.008615838, z: -0.043828253, w: 0.9842639}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_Spine2
+      parentName: Chimp_Spine1
+      position: {x: -0.000116999996, y: 0.125267, z: -0.008903}
+      rotation: {x: 0.03118975, y: 0.011286393, z: -0.029752694, w: 0.9990068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_Neck
+      parentName: Chimp_Spine2
+      position: {x: -0.00012299999, y: 0.16901399, z: 0.0052670003}
+      rotation: {x: -0.40326533, y: -0.12019031, z: 0.12467557, w: 0.89854735}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_Head
+      parentName: Chimp_Neck
+      position: {x: -0.000063, y: 0.061402995, z: 0.060246}
+      rotation: {x: -0.13860708, y: 0.119647436, z: -0.093223184, w: 0.9786634}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftEye
+      parentName: Chimp_Head
+      position: {x: -0.062975, y: 0.0070029995, z: 0.23152399}
+      rotation: {x: -0.00006625357, y: -0.0001850296, z: 0.0003726155, w: 0.99999994}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightEye
+      parentName: Chimp_Head
+      position: {x: 0.062793, y: 0.007097, z: 0.23156999}
+      rotation: {x: -0.00006625357, y: -0.0001850296, z: 0.0003726155, w: 0.99999994}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftShoulder
+      parentName: Chimp_Spine2
+      position: {x: -0.070052, y: 0.077562, z: -0.0068309996}
+      rotation: {x: -0.060311414, y: -0.026699122, z: 0.74065673, w: 0.6686384}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftArm
+      parentName: Chimp_LeftShoulder
+      position: {x: 0.00036200002, y: 0.106857, z: -0.0067669996}
+      rotation: {x: 0.2269692, y: 0.121670075, z: 0.03789973, w: 0.9655284}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftForeArm
+      parentName: Chimp_LeftArm
+      position: {x: 0.0087129995, y: 0.19329299, z: -0.051364}
+      rotation: {x: -0.10022396, y: -0.092681624, z: 0.016535722, w: 0.99050087}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftHand
+      parentName: Chimp_LeftForeArm
+      position: {x: 0.017950999, y: 0.217787, z: -0.009879}
+      rotation: {x: 0.22863223, y: 0.28743377, z: -0.072466515, w: 0.9272852}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftHandThumb1
+      parentName: Chimp_LeftHand
+      position: {x: -0.00427, y: 0.049349, z: 0.033118997}
+      rotation: {x: 0.44867325, y: 0.124391556, z: -0.10321237, w: 0.87895745}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftHandThumb2
+      parentName: Chimp_LeftHandThumb1
+      position: {x: -0.008289999, y: 0.056576, z: -0.013084}
+      rotation: {x: 0.07962741, y: 0.0203693, z: 0.06265615, w: 0.9946451}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftHandThumb3
+      parentName: Chimp_LeftHandThumb2
+      position: {x: -0.000059, y: 0.028821, z: -0.013884}
+      rotation: {x: 0.014941585, y: 0.0005646784, z: -0.013670219, w: 0.9997948}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftHandIndex1
+      parentName: Chimp_LeftHand
+      position: {x: 0.024554998, y: 0.16644698, z: 0.018688}
+      rotation: {x: -0.09619336, y: 0.0066599846, z: -0.060261797, w: 0.9935145}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftHandIndex2
+      parentName: Chimp_LeftHandIndex1
+      position: {x: 0.0042129997, y: 0.045018, z: -0.000653}
+      rotation: {x: 0.021646708, y: -0.002172517, z: -0.074070856, w: 0.9970157}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftHandIndex3
+      parentName: Chimp_LeftHandIndex2
+      position: {x: -0.003475, y: 0.028940998, z: -0.0015039999}
+      rotation: {x: -0.0000008726646, y: -0.000004363323, z: -3.8077176e-12, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftHandMiddle1
+      parentName: Chimp_LeftHand
+      position: {x: 0.028083999, y: 0.16021499, z: -0.012688}
+      rotation: {x: -0.040061682, y: -0.0050584623, z: -0.06469707, w: 0.99708766}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftHandMiddle2
+      parentName: Chimp_LeftHandMiddle1
+      position: {x: 0.003976, y: 0.047793, z: -0.006228}
+      rotation: {x: -0.015302287, y: -0.012924179, z: -0.10806791, w: 0.99394166}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftHandMiddle3
+      parentName: Chimp_LeftHandMiddle2
+      position: {x: -0.005997, y: 0.029461998, z: -0.0027059999}
+      rotation: {x: 0, y: 0.0000078539815, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftHandRing1
+      parentName: Chimp_LeftHand
+      position: {x: 0.021868, y: 0.15493, z: -0.045415}
+      rotation: {x: -0.013364257, y: -0.014631429, z: -0.09424563, w: 0.9953518}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftHandRing2
+      parentName: Chimp_LeftHandRing1
+      position: {x: 0.00093599997, y: 0.044287, z: -0.008234999}
+      rotation: {x: -0.014894193, y: -0.009286548, z: -0.05002463, w: 0.99859375}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftHandRing3
+      parentName: Chimp_LeftHandRing2
+      position: {x: -0.0049759997, y: 0.033666, z: -0.004971}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftHandPinky1
+      parentName: Chimp_LeftHand
+      position: {x: 0.0043659997, y: 0.15079099, z: -0.075691}
+      rotation: {x: 0.025196897, y: -0.02594284, z: -0.11973476, w: 0.992147}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftHandPinky2
+      parentName: Chimp_LeftHandPinky1
+      position: {x: -0.0014049999, y: 0.039966, z: -0.010714999}
+      rotation: {x: -0.05245099, y: -0.025706911, z: -0.083743244, w: 0.994774}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_LeftHandPinky3
+      parentName: Chimp_LeftHandPinky2
+      position: {x: -0.009089, y: 0.032153998, z: -0.004727}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hand01_Floor01
+      parentName: Chimp_LeftHand
+      position: {x: -0, y: 0.287473, z: 0.079327}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hand01_Floor02
+      parentName: Chimp_LeftHand
+      position: {x: -0, y: 0.13487099, z: 0.079327}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hand01_Floor03
+      parentName: Chimp_LeftHand
+      position: {x: -0, y: -0.0063380003, z: 0.079327}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hand01_Floor04
+      parentName: Chimp_LeftHand
+      position: {x: -0, y: 0.287473, z: -0.080972}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hand01_Floor05
+      parentName: Chimp_LeftHand
+      position: {x: -0, y: 0.13487099, z: -0.080972}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hand01_Floor06
+      parentName: Chimp_LeftHand
+      position: {x: -0, y: -0.0063380003, z: -0.080972}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightShoulder
+      parentName: Chimp_Spine2
+      position: {x: 0.069947, y: 0.077662, z: -0.00677}
+      rotation: {x: -0.06166017, y: 0.0042490517, z: -0.72115576, w: 0.6900105}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightArm
+      parentName: Chimp_RightShoulder
+      position: {x: -0.00039099998, y: 0.106860995, z: -0.0067169997}
+      rotation: {x: 0.18802361, y: -0.3639705, z: 0.067657515, w: 0.9097225}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightForeArm
+      parentName: Chimp_RightArm
+      position: {x: -0.0089219995, y: 0.193389, z: -0.050961997}
+      rotation: {x: -0.099596076, y: 0.09745495, z: -0.022666078, w: 0.9899845}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightHand
+      parentName: Chimp_RightForeArm
+      position: {x: -0.017626999, y: 0.217837, z: -0.009348}
+      rotation: {x: 0.1741361, y: -0.1962682, z: -0.07598258, w: 0.9619678}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightHandThumb1
+      parentName: Chimp_RightHand
+      position: {x: 0.004602, y: 0.049363997, z: 0.033053998}
+      rotation: {x: 0.4361709, y: 0.25339112, z: -0.077809736, w: 0.8599381}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightHandThumb2
+      parentName: Chimp_RightHandThumb1
+      position: {x: 0.008404, y: 0.056566, z: -0.0130509995}
+      rotation: {x: 0.08679331, y: -0.017708791, z: -0.051055487, w: 0.9947597}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightHandThumb3
+      parentName: Chimp_RightHandThumb2
+      position: {x: 0.000081, y: 0.02884, z: -0.013845}
+      rotation: {x: 0.014939828, y: -0.00056384277, z: 0.0136693325, w: 0.9997948}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightHandIndex1
+      parentName: Chimp_RightHand
+      position: {x: -0.024118999, y: 0.16650298, z: 0.018756999}
+      rotation: {x: -0.09575937, y: -0.006446812, z: 0.060975075, w: 0.9935143}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightHandIndex2
+      parentName: Chimp_RightHandIndex1
+      position: {x: -0.004137, y: 0.045025, z: -0.000652}
+      rotation: {x: 0.022198342, y: 0.0021824667, z: 0.073894516, w: 0.99701667}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightHandIndex3
+      parentName: Chimp_RightHandIndex2
+      position: {x: 0.003515, y: 0.028933, z: -0.0015489999}
+      rotation: {x: -0.0000008726608, y: 0.000004363324, z: -0.0000008726608, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightHandMiddle1
+      parentName: Chimp_RightHand
+      position: {x: -0.02789, y: 0.160257, z: -0.012588}
+      rotation: {x: -0.039570067, y: 0.005175078, z: 0.064989865, w: 0.99708766}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightHandMiddle2
+      parentName: Chimp_RightHandMiddle1
+      position: {x: -0.0039359997, y: 0.047796, z: -0.0062309997}
+      rotation: {x: -0.014483092, y: 0.013021558, z: 0.10815274, w: 0.9939435}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightHandMiddle3
+      parentName: Chimp_RightHandMiddle2
+      position: {x: 0.006029, y: 0.029449, z: -0.0027700001}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightHandRing1
+      parentName: Chimp_RightHand
+      position: {x: -0.021925, y: 0.154939, z: -0.045356996}
+      rotation: {x: -0.012637742, y: 0.014719865, z: 0.0943362, w: 0.9953513}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightHandRing2
+      parentName: Chimp_RightHandRing1
+      position: {x: -0.000917, y: 0.044283, z: -0.008258}
+      rotation: {x: -0.0145162195, y: 0.009345278, z: 0.05011751, w: 0.9985941}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightHandRing3
+      parentName: Chimp_RightHandRing2
+      position: {x: 0.004999, y: 0.033654, z: -0.00503}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightHandPinky1
+      parentName: Chimp_RightHand
+      position: {x: -0.004654, y: 0.150749, z: -0.075757995}
+      rotation: {x: 0.026116734, y: 0.025974724, z: 0.11952307, w: 0.9921479}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightHandPinky2
+      parentName: Chimp_RightHandPinky1
+      position: {x: 0.0013969999, y: 0.039956, z: -0.010751}
+      rotation: {x: -0.051781055, y: 0.025857614, z: 0.08412483, w: 0.9947729}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightHandPinky3
+      parentName: Chimp_RightHandPinky2
+      position: {x: 0.0091119995, y: 0.032133996, z: -0.004815}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hand01_Floor01
+      parentName: Chimp_RightHand
+      position: {x: -0, y: 0.287473, z: 0.079327}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hand01_Floor02
+      parentName: Chimp_RightHand
+      position: {x: -0, y: 0.13487099, z: 0.079327}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hand01_Floor03
+      parentName: Chimp_RightHand
+      position: {x: -0, y: -0.0063380003, z: 0.079327}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hand01_Floor04
+      parentName: Chimp_RightHand
+      position: {x: -0, y: 0.287473, z: -0.08097299}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hand01_Floor05
+      parentName: Chimp_RightHand
+      position: {x: -0, y: 0.13487099, z: -0.080972}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hand01_Floor06
+      parentName: Chimp_RightHand
+      position: {x: -0, y: -0.0063380003, z: -0.080972}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightUpLeg
+      parentName: Chimp_Hips
+      position: {x: 0.089099996, y: -0.034417, z: 0}
+      rotation: {x: 0.18428786, y: -0.2622069, z: 0.9424065, w: 0.09568498}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightLeg
+      parentName: Chimp_RightUpLeg
+      position: {x: -0.020923, y: 0.141287, z: 0.055719}
+      rotation: {x: 0.0038057063, y: 0.25180373, z: 0.020537745, w: 0.96755296}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightFoot
+      parentName: Chimp_RightLeg
+      position: {x: -0.014606, y: 0.134173, z: -0.047793}
+      rotation: {x: 0.38139617, y: 0.043913987, z: 0.16286656, w: 0.9088911}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightToeBase
+      parentName: Chimp_RightFoot
+      position: {x: -0.021594, y: 0.035864, z: 0.158565}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Foot01_Floor01
+      parentName: Chimp_RightToeBase
+      position: {x: 0.098690994, y: 0.09303799, z: -0.023555}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Foot01_Floor04
+      parentName: Chimp_RightToeBase
+      position: {x: -0.128168, y: 0.093022004, z: -0.023505999}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightFootExtraFinger1
+      parentName: Chimp_RightFoot
+      position: {x: 0.051206, y: 0.040707998, z: 0.043218996}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightFootExtraFinger2
+      parentName: Chimp_RightFootExtraFinger1
+      position: {x: -0.019966, y: -0.003637, z: 0.050914995}
+      rotation: {x: 0.036158368, y: 0.00000008131604, z: 0.0018746182, w: 0.99934435}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chimp_RightFootExtraFinger3
+      parentName: Chimp_RightFootExtraFinger2
+      position: {x: -0.001789, y: 0, z: 0.034507}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Foot01_Floor02
+      parentName: Chimp_RightFoot
+      position: {x: 0.077108, y: 0.06, z: 0.14412999}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Foot01_Floor03
+      parentName: Chimp_RightFoot
+      position: {x: 0.077107, y: 0.06, z: -0.047076996}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Foot01_Floor05
+      parentName: Chimp_RightFoot
+      position: {x: -0.14975, y: 0.06, z: 0.144132}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Foot01_Floor06
+      parentName: Chimp_RightFoot
+      position: {x: -0.14975199, y: 0.06, z: -0.047075}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Morphs
+      parentName: RootNode(0)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

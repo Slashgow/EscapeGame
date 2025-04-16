@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using PurrNet;
 using UnityEngine;
@@ -21,16 +20,30 @@ public class FirstPersonController : NetworkBehaviour
     [SerializeField] private CharacterController characterController;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private PlayerInputHandler playerInputHandler;
+    [SerializeField] private Animator animator;
+    [SerializeField] private List<Renderer> playerRenderers;
 
+    [SerializeField, Range(0f,0.02f)] private float movementDeltaForAnimation = 0.005f;
+    
     private Vector3 currentMovement;
     private float verticalRotation;
     private float CurrentSpeed => walkSpeed * (playerInputHandler.SprintTriggered ? sprintMultiplier : 1);
+
+    private readonly int IS_SPRINTING = Animator.StringToHash("Sprinting");
+    private bool isSprinting;
+    private readonly int IS_WALKING = Animator.StringToHash("Walking");
+    private bool isWalking;
+    private readonly int JUMP = Animator.StringToHash("Jump");
+    private bool isJumping;
 
     protected override void OnSpawned()
     {
         base.OnSpawned();
 
         enabled = isOwner;
+
+        if(isOwner)
+            playerRenderers.ForEach(renderer => renderer.enabled = false);
 
         if(!isOwner)
             Destroy(mainCamera.gameObject);
@@ -62,10 +75,23 @@ public class FirstPersonController : NetworkBehaviour
     {
         if (characterController.isGrounded)
         {
+            if (isJumping)
+            {
+                animator.SetBool(JUMP, false);
+                isJumping = false;
+                Debug.Log("stop jumping");
+            }
             currentMovement.y = -0.5f;
 
             if (playerInputHandler.JumpTriggered)
             {
+                if (!isJumping)
+                {
+                    Debug.Log("start jumping");
+                    animator.SetBool(JUMP, true);
+                    isJumping = true;
+                }
+             
                 currentMovement.y = jumpForce;
             }
         }
@@ -81,8 +107,38 @@ public class FirstPersonController : NetworkBehaviour
         currentMovement.x = worldDirection.x * CurrentSpeed;
         currentMovement.z = worldDirection.z * CurrentSpeed;
 
+        HandleAnimationState();
+
         HandleJumping();
         characterController.Move(currentMovement * Time.deltaTime);
+    }
+
+    private void HandleAnimationState()
+    {
+        if (isWalking && playerInputHandler.MovementInput.x == 0 && playerInputHandler.MovementInput.y == 0)
+        {
+            Debug.Log("stop walking");
+            animator.SetBool(IS_WALKING, false);
+            isWalking = false;
+        }
+        else if(!isWalking && (playerInputHandler.MovementInput.x > 0f || playerInputHandler.MovementInput.y > 0f))
+        {
+            Debug.Log("start walking");
+            animator.SetBool(IS_WALKING, true);
+            isWalking = true;
+        }
+        
+        if(isWalking && !isSprinting && CurrentSpeed > walkSpeed)
+        {
+            animator.SetBool(IS_SPRINTING, true);
+            isSprinting = true;
+        }
+        else if(isSprinting && CurrentSpeed <= walkSpeed)
+        {
+            animator.SetBool(IS_SPRINTING, false);
+            isSprinting = false;
+        }
+       
     }
 
     private void ApplyHorizontalRotation(float rotationAmount)
