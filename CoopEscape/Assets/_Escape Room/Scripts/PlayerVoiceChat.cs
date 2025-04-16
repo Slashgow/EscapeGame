@@ -41,7 +41,7 @@ public class PlayerVoiceChat : NetworkBehaviour
         {
             HandleVoiceRecording(false);
         }
-        else if (PlayerIDHelper.Instance.DistanceBetweenPlayer < distanceToRecordProximityChat)
+        else if (PlayerIDHelper.Instance.DistanceBetweenPlayer() < distanceToRecordProximityChat)
         {
             HandleVoiceRecording(true);
         }
