@@ -50,14 +50,14 @@ public class PlayerVoiceChat : NetworkBehaviour
             isProximityChatRecording = true;
             SteamUser.StartVoiceRecording();
         }
-        else if (isProximityChatRecording)
-        {
-            HandleVoiceRecording(true);
-        }
         else if (isProximityChatRecording && PlayerIDHelper.Instance.DistanceBetweenPlayer() >= distanceToRecordProximityChat)
         {
             isProximityChatRecording = false;
             SteamUser.StopVoiceRecording();
+        }
+        else if (isProximityChatRecording)
+        {
+            HandleVoiceRecording(true);
         }
     }
 
