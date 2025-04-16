@@ -15,6 +15,7 @@ public class PlayerVoiceChat : NetworkBehaviour
 
 
     private bool isPushToTalkRecording;
+    private bool isProximityChatRecording;
 
     protected override void OnSpawned()
     {
@@ -40,11 +41,23 @@ public class PlayerVoiceChat : NetworkBehaviour
         else if (isPushToTalkRecording)
         {
             HandleVoiceRecording(false);
+            return;
         }
-        else if (PlayerIDHelper.Instance.DistanceBetweenPlayer() < distanceToRecordProximityChat)
+
+        else if (!isProximityChatRecording && PlayerIDHelper.Instance.DistanceBetweenPlayer() < distanceToRecordProximityChat)
         {
             Debug.Log("min distance OK");
+            isProximityChatRecording = true;
+            SteamUser.StartVoiceRecording();
+        }
+        else if (isProximityChatRecording)
+        {
             HandleVoiceRecording(true);
+        }
+        else if (isProximityChatRecording && PlayerIDHelper.Instance.DistanceBetweenPlayer() >= distanceToRecordProximityChat)
+        {
+            isProximityChatRecording = false;
+            SteamUser.StopVoiceRecording();
         }
     }
 
