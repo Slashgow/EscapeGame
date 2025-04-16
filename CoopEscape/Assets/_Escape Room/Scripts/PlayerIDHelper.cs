@@ -12,7 +12,13 @@ public class PlayerIDHelper : MonoSingleton<PlayerIDHelper>
 
     private  List<PlayerReference> players = new List<PlayerReference>();
 
-    public float DistanceBetweenPlayer() => Vector3.Distance(players[0].Player.transform.position, players[1].Player.transform.position);
+    public float DistanceBetweenPlayer()
+    {
+        var distance = Vector3.Distance(players[0].Player.transform.position, players[1].Player.transform.position);
+        Debug.Log(distance);
+        return distance;
+    }
+
     public void AddPlayerReference(PlayerReference playerReference) => players.Add(playerReference);
 
     public PlayerID? GetOtherPlayerID(PlayerID? callerPlayerID)
