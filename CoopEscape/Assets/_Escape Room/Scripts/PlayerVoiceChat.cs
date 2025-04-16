@@ -7,6 +7,12 @@ public class PlayerVoiceChat : NetworkBehaviour
     [SerializeField]
     private PlayerInputHandler playerInputHandler;
 
+    [SerializeField, Range(0f,20f)]
+    private float distanceToRecordProximityChat = 10f;
+
+    [SerializeField]
+    private AudioSource playerAudioSource;
+
 
     private bool isPushToTalkRecording;
 
@@ -33,29 +39,38 @@ public class PlayerVoiceChat : NetworkBehaviour
         }
         else if (isPushToTalkRecording)
         {
-            EVoiceResult voiceResult = SteamUser.GetAvailableVoice(out uint compressed);
-            if(voiceResult == EVoiceResult.k_EVoiceResultOK && compressed > 1024)
+            HandleVoiceRecording(false);
+        }
+        else if (PlayerIDHelper.Instance.DistanceBetweenPlayer < distanceToRecordProximityChat)
+        {
+            HandleVoiceRecording(true);
+        }
+    }
+
+    private void HandleVoiceRecording(bool writeOnSenderAudioSource)
+    {
+        EVoiceResult voiceResult = SteamUser.GetAvailableVoice(out uint compressed);
+        if (voiceResult == EVoiceResult.k_EVoiceResultOK && compressed > 1024)
+        {
+            Debug.Log(compressed);
+            byte[] destBuffer = new byte[1024];
+            voiceResult = SteamUser.GetVoice(true, destBuffer, 1024, out uint bytesWritten);
+            if (voiceResult == EVoiceResult.k_EVoiceResultOK && bytesWritten > 0)
             {
-                Debug.Log(compressed);
-                byte[] destBuffer = new byte[1024];
-                voiceResult = SteamUser.GetVoice(true, destBuffer, 1024, out uint bytesWritten);
-                if(voiceResult == EVoiceResult.k_EVoiceResultOK &&  bytesWritten > 0)
-                {
-                    SendVoiceToOtherPlayer(PlayerIDHelper.Instance.GetOtherPlayerID(owner), destBuffer ,bytesWritten);
-                }
+                SendVoiceToOtherPlayer(PlayerIDHelper.Instance.GetOtherPlayerID(owner), writeOnSenderAudioSource, destBuffer, bytesWritten);
             }
         }
     }
 
     [ServerRpc]
-    private void SendVoiceToOtherPlayer(PlayerID? target, byte[] data, uint bytesWritten, RPCInfo info = default)
+    private void SendVoiceToOtherPlayer(PlayerID? target, bool writeOnSenderAudioSource, byte[] data, uint bytesWritten, RPCInfo info = default)
     {
         Debug.Log($"Send voice to other player server : {info.sender}");
-        SendVoiceToOtherPlayer_Target((PlayerID)target, data, bytesWritten);
+        SendVoiceToOtherPlayer_Target((PlayerID)target, writeOnSenderAudioSource, data, bytesWritten);
     }
 
     [TargetRpc]
-    private void SendVoiceToOtherPlayer_Target(PlayerID target, byte[] data, uint bytesWritten, RPCInfo info = default)
+    private void SendVoiceToOtherPlayer_Target(PlayerID target, bool writeOnSenderAudioSource, byte[] data, uint bytesWritten, RPCInfo info = default)
     {
         Debug.Log($"send voice to other player target {target}");
         Debug.Log($"send voice to other player target, Sender: {info.sender}");
@@ -65,15 +80,17 @@ public class PlayerVoiceChat : NetworkBehaviour
         EVoiceResult ret = SteamUser.DecompressVoice(data, bytesWritten, destBuffer2, (uint)destBuffer2.Length, out bytesWritten2, 22050);
         if (ret == EVoiceResult.k_EVoiceResultOK && bytesWritten2 > 0)
         {
-            PlayerIDHelper.Instance.GetOtherPlayerAudioSource(owner).clip = AudioClip.Create(UnityEngine.Random.Range(100, 1000000).ToString(), 22050, 1, 22050, false);
+            AudioSource audioSource = writeOnSenderAudioSource ? playerAudioSource : PlayerIDHelper.Instance.GetOtherPlayerAudioSource(owner);
+
+            audioSource.clip = AudioClip.Create(UnityEngine.Random.Range(100, 1000000).ToString(), 22050, 1, 22050, false);
 
             float[] test = new float[22050];
             for (int i = 0; i < test.Length; i++)
             {
                 test[i] = (short)(destBuffer2[i * 2] | destBuffer2[i * 2 + 1] << 8) / 32768.0f;
             }
-            PlayerIDHelper.Instance.GetOtherPlayerAudioSource(owner).clip.SetData(test, 0);
-            PlayerIDHelper.Instance.GetOtherPlayerAudioSource(owner).Play();
+            audioSource.clip.SetData(test, 0);
+            audioSource.Play();
         }
     }
 }

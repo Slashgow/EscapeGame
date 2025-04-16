@@ -423,6 +423,7 @@ MonoBehaviour:
   _networkRules: {fileID: 0}
   _visitiblityRules: {fileID: 0}
   playerInputHandler: {fileID: 2384613676191721805}
+  distanceToRecordProximityChat: 10
   playerAudioSource: {fileID: 8334346756808648373}
 --- !u!82 &8334346756808648373
 AudioSource:
@@ -436,7 +437,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
