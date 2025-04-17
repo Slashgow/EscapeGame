@@ -20,11 +20,31 @@ public class  PlayerReference
 
 public class Player : NetworkBehaviour
 {
+
+    public static Player localPlayerInstance;
+
+    private PlayerReference playerReference;
     protected override void OnSpawned()
     {
         base.OnSpawned();
 
+        if (isOwner)
+            localPlayerInstance = this;
 
-        PlayerIDHelper.Instance.AddPlayerReference(new PlayerReference(this.gameObject, owner));
+        playerReference = new PlayerReference(this.gameObject, owner);
+        PlayerIDHelper.Instance.AddPlayerReference(playerReference);
     }
+
+    protected override void OnDespawned()
+    {
+        base.OnDespawned();
+
+        if(isOwner)
+            localPlayerInstance = null;
+
+        PlayerIDHelper.Instance.RemovePlayerReference(playerReference);
+        playerReference = null;
+    }
+
+
 }

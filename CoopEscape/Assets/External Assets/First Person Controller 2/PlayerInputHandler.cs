@@ -17,18 +17,23 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] private string jump = "Jump";
     [SerializeField] private string sprint = "Sprint";
     [SerializeField] private string pushToTalk = "PushToTalk";
+   
+
 
     private InputAction movementAction;
     private InputAction rotationAction;
     private InputAction jumpAction;
     private InputAction sprintAction;
     private InputAction pushToTalkAction;
+   
+
 
     public Vector2 MovementInput {  get; private set; }
     public Vector2 RotationInput {  get; private set; }
     public bool JumpTriggered {  get; private set; }
     public bool SprintTriggered {  get; private set; }
     public bool PushToTalkTriggered { get; private set; }
+
 
     private void Awake()
     {
@@ -39,6 +44,7 @@ public class PlayerInputHandler : MonoBehaviour
         jumpAction = mapReference.FindAction(jump);
         sprintAction = mapReference.FindAction(sprint);
         pushToTalkAction = mapReference.FindAction(pushToTalk);
+
 
         SubscribeActionValuesToInputEvents();
     }

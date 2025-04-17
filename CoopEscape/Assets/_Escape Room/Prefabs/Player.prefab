@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5805093602935911185}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1251678342020687456}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RootNode(0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2239393571867186558}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8113047146982179962}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RL_ExtendedRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4957353974097287106}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6536764778930608412}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7683805891611466959}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftFootExtraFinger3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5902090320347157658}
   - component: {fileID: 3297638940297814712}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_eye_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2703165536832792618}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5053285213649679120}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4931649446508920685}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,6 +426,69 @@ Transform:
   - {fileID: 5053285213649679120}
   m_Father: {fileID: 2239393571867186558}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &924906906358763421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4011274481208138596}
+  - component: {fileID: 1743277709128119373}
+  m_Layer: 7
+  m_Name: Item Attach Point
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4011274481208138596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924906906358763421}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.496, z: 0.445}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5329588474800769361}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1743277709128119373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924906906358763421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817fe5016bd0a2a49a95b6eb338bb132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
+  _syncPosition: 1
+  _syncRotation: 1
+  _syncScale: 1
+  _syncParent: 1
+  _interpolateSettings: 7
+  _minBufferSize: 1
+  _maxBufferSize: 2
+  _characterControllerPatch: 0
+  _ownerAuth: 1
+  _interpolationTiming: 0
 --- !u!1 &951538831514172155
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8139170681514528106}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5508139022894362025}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +561,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 308566696928804388}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightFootExtraFinger1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,7 +593,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5670658724290187740}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +625,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6425006923132070805}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: L_Foot01_Floor02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +656,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7540307798166617164}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: L_Hand01_Floor03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -624,7 +687,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4928596066122868213}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -655,7 +718,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8080709898072248824}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -686,7 +749,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 772415732553625302}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -720,7 +783,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1939520195414628772}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R_Foot01_Floor03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -752,7 +815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7647894685587453222}
   - component: {fileID: 2384613676191721805}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerInputHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -802,7 +865,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5500413923908877638}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Morphs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -833,7 +896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7452860977118310305}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -865,7 +928,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 210930409663088302}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -897,7 +960,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 824838240346705753}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -928,7 +991,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8925711190551322839}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: L_Foot01_Floor04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -959,7 +1022,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1743815885906889474}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BoneRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -991,7 +1054,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3231870633285883206}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1022,7 +1085,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1617194176053029236}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: L_Hand01_Floor01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1053,7 +1116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6186599386409590859}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightFootExtraFinger3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1084,7 +1147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1223144018901439176}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1116,7 +1179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5560017912920133367}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1147,7 +1210,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1008841706068362633}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftFootExtraFinger2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,7 +1242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2581141994703420115}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1211,7 +1274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8236487678253428608}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R_Foot01_Floor05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1242,7 +1305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7965028162261477762}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: L_Foot01_Floor06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1274,7 +1337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3832499694409361349}
   - component: {fileID: 1927377117206624356}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1412,143 +1475,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.047200352, y: 0.15299872, z: 0.111631885}
     m_Extent: {x: 0.41928855, y: 0.5358027, z: 0.35039878}
   m_DirtyAABB: 0
---- !u!1 &2982261200179974496
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5502762059108994743}
-  - component: {fileID: 2996255416347603310}
-  - component: {fileID: 155008967158366416}
-  - component: {fileID: 2475982674899943685}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5502762059108994743
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2982261200179974496}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.00000005960463, y: 4.3655742e-11, z: 1.8385281e-11, w: 1}
-  m_LocalPosition: {x: -0, y: 0.841, z: 0.098}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5329588474800769361}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &2996255416347603310
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2982261200179974496}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.4
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!81 &155008967158366416
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2982261200179974496}
-  m_Enabled: 1
---- !u!114 &2475982674899943685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2982261200179974496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
-  m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &3176494442246605962
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,7 +1484,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 156265179041590774}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1590,7 +1516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 763065180976307027}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightFootExtraFinger3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1621,7 +1547,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5277681405402900201}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R_Hand01_Floor02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1652,7 +1578,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1406149543858309256}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R_Foot01_Floor02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1683,7 +1609,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4656507049379828236}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: L_Hand01_Floor02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1714,7 +1640,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3968169328079374988}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1746,7 +1672,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1489767763996686110}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1778,7 +1704,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9219156995259884824}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightFootExtraFinger2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1810,7 +1736,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2797109248597637073}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1842,7 +1768,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5837436176300599223}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1874,7 +1800,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4994329008014899887}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1907,7 +1833,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2338318905089925952}
   - component: {fileID: 8005556607515916335}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_eye_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1996,7 +1922,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 458209148412327061}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2027,7 +1953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8113341252606559532}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2059,7 +1985,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8657770082799901066}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: L_Foot01_Floor01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2090,7 +2016,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4142419445605859268}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2122,7 +2048,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3148622333998381600}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2155,7 +2081,7 @@ GameObject:
   - component: {fileID: 5331389761306168469}
   - component: {fileID: 2241889267728176879}
   - component: {fileID: 442715792345802309}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: singe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2238,7 +2164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4649764415958853664}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2269,7 +2195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8443044147826351338}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2303,7 +2229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1299372682696390920}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: L_Foot01_Floor03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2336,7 +2262,7 @@ GameObject:
   - component: {fileID: 9179561221194893961}
   - component: {fileID: 5685781500479045124}
   - component: {fileID: 3738488638695621355}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerVisualised
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2421,7 +2347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4077100343809205824}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R_Hand01_Floor06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2452,7 +2378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6128868972870815269}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2484,7 +2410,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3688872605161389813}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R_Hand01_Floor05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2515,7 +2441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5585725742473888522}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftFootExtraFinger1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2547,7 +2473,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 236519882739373570}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2579,7 +2505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7973215967908226376}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2616,7 +2542,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7842557498530158337}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2648,7 +2574,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7277362007434554741}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2679,7 +2605,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3045691281778330154}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: L_Hand01_Floor04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2710,7 +2636,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 739875110777771900}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2743,7 +2669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7931147479035944568}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2775,7 +2701,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3376902653209393308}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2807,7 +2733,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5494095041472812156}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R_Foot01_Floor04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2838,7 +2764,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8253533434719673658}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightFootExtraFinger1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2870,7 +2796,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1566418659317402233}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R_Foot01_Floor06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2901,7 +2827,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4476479430584186657}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: L_Hand01_Floor05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2932,7 +2858,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2417534136553580374}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2964,7 +2890,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4353475015343377718}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R_Foot01_Floor01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2995,7 +2921,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1163153764152312353}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3027,7 +2953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2921092125444745508}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3059,7 +2985,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7621208802612203433}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3091,7 +3017,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5639350145795163426}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3123,7 +3049,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7731839745908594888}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3155,7 +3081,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 700335762227260325}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftFootExtraFinger3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3186,7 +3112,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2129090293681893341}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3219,7 +3145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5762382389055303517}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: L_Hand01_Floor06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3250,7 +3176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7482331028690135877}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftFootExtraFinger1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3282,7 +3208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 539465372760465189}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3314,7 +3240,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1282274140828212764}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftFootExtraFinger2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3346,7 +3272,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2642083979268523739}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R_Hand01_Floor04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3377,7 +3303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9193024470602023030}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3409,7 +3335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5573064239973108681}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3441,7 +3367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6435616452935103725}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightFootExtraFinger2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3479,7 +3405,8 @@ GameObject:
   - component: {fileID: 7278101234288199453}
   - component: {fileID: 8334346756808648373}
   - component: {fileID: 7313460753356400894}
-  m_Layer: 0
+  - component: {fileID: 1939441261882779962}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3502,7 +3429,7 @@ Transform:
   - {fileID: 5331389761306168469}
   - {fileID: 9179561221194893961}
   - {fileID: 7647894685587453222}
-  - {fileID: 5502762059108994743}
+  - {fileID: 4011274481208138596}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &6485250341404631971
@@ -3557,14 +3484,15 @@ MonoBehaviour:
   gravityMultiplier: 1
   mouseSensitivity: 0.1
   upDownLookRange: 80
+  cameraOffset: {x: 0, y: 0.841, z: 0.098}
   characterController: {fileID: 6485250341404631971}
-  mainCamera: {fileID: 2996255416347603310}
   playerInputHandler: {fileID: 2384613676191721805}
   animator: {fileID: 2241889267728176879}
   playerRenderers:
   - {fileID: 1927377117206624356}
   - {fileID: 8005556607515916335}
   - {fileID: 3297638940297814712}
+  itemAttachPoint: {fileID: 4011274481208138596}
   movementDeltaForAnimation: 0.005
 --- !u!114 &3420198046690534907
 MonoBehaviour:
@@ -3739,6 +3667,28 @@ MonoBehaviour:
   _directChildren: []
   _networkRules: {fileID: 0}
   _visitiblityRules: {fileID: 0}
+--- !u!114 &1939441261882779962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8303163789683781607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ad697169b06754fb38f0bf39619b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
+  itemAttachPoint: {fileID: 4011274481208138596}
 --- !u!1 &8415953949390343587
 GameObject:
   m_ObjectHideFlags: 0
@@ -3748,7 +3698,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1173817160747897104}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3780,7 +3730,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5414796320416327863}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_LeftHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3811,7 +3761,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1474209500831491241}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: L_Foot01_Floor05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3842,7 +3792,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5032353709027449319}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R_Hand01_Floor03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3873,7 +3823,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4003076011512774370}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3904,7 +3854,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3302644967092670330}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R_Hand01_Floor01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3938,7 +3888,7 @@ GameObject:
   - component: {fileID: 3944838240935989146}
   - component: {fileID: 934234311420117246}
   - component: {fileID: 5501433988724105758}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4043,7 +3993,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 553223399668516530}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4085,7 +4035,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7066476513124403383}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimp_RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}

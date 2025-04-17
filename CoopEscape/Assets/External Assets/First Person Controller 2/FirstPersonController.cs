@@ -16,15 +16,18 @@ public class FirstPersonController : NetworkBehaviour
     [SerializeField] private float mouseSensitivity = 0.1f;
     [SerializeField] private float upDownLookRange = 80f;
 
-    [Header ("References")]
+    [Header("References")]
+    [SerializeField] private Vector3 cameraOffset;
     [SerializeField] private CharacterController characterController;
-    [SerializeField] private Camera mainCamera;
     [SerializeField] private PlayerInputHandler playerInputHandler;
     [SerializeField] private Animator animator;
     [SerializeField] private List<Renderer> playerRenderers;
+    [SerializeField] private Transform itemAttachPoint;
 
     [SerializeField, Range(0f,0.02f)] private float movementDeltaForAnimation = 0.005f;
-    
+
+    private Camera playerCamera;
+
     private Vector3 currentMovement;
     private float verticalRotation;
     private float CurrentSpeed => walkSpeed * (playerInputHandler.SprintTriggered ? sprintMultiplier : 1);
@@ -42,11 +45,23 @@ public class FirstPersonController : NetworkBehaviour
 
         enabled = isOwner;
 
+        if(!isOwner)
+            return;
+
         if(isOwner)
             playerRenderers.ForEach(renderer => renderer.enabled = false);
 
-        if(!isOwner)
-            Destroy(mainCamera.gameObject);
+        playerCamera = Camera.main;
+        playerCamera.transform.SetParent(transform);
+        playerCamera.transform.localPosition = cameraOffset;
+        itemAttachPoint.SetParent(playerCamera.transform);
+        if(playerCamera == null)
+        {
+            enabled = false;
+        }
+
+        //if (!isOwner)
+        //    Destroy(playerCamera.gameObject);
     }
 
 
@@ -149,7 +164,7 @@ public class FirstPersonController : NetworkBehaviour
     private void ApplyVerticalRotation(float rotationAmount)
     {
         verticalRotation = Mathf.Clamp(verticalRotation - rotationAmount, -upDownLookRange, upDownLookRange);
-        mainCamera.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
+        playerCamera.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
     }
 
     private void HandleRotation()

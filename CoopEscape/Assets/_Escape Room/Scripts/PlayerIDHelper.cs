@@ -21,6 +21,7 @@ public class PlayerIDHelper : MonoSingleton<PlayerIDHelper>
     }
 
     public void AddPlayerReference(PlayerReference playerReference) => players.Add(playerReference);
+    public void RemovePlayerReference(PlayerReference playerReference) => players.Remove(playerReference);
 
     public PlayerID? GetOtherPlayerID(PlayerID? callerPlayerID)
     {
