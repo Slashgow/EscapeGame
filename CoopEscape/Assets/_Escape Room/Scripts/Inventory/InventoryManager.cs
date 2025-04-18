@@ -78,17 +78,26 @@ public class InventoryManager : MonoBehaviour
         Cursor.visible = toggle;
     }
 
-    public void ItemMoved(InventoryItem item, InventorySlot newSlot)
+    public void ItemMoved(InventoryItem inventoryItem, InventorySlot newSlot)
     {
         int newSlotIndex = slots.IndexOf(newSlot);
-        int oldSlotIndex = Array.FindIndex(inventoryData, x => x.inventoryItem == item);
+        int oldSlotIndex = Array.FindIndex(inventoryData, x => x.inventoryItem == inventoryItem);
         if(oldSlotIndex == -1)
         {
-            Debug.LogError($"Couldn't find item {item.name} in inventory data!", this);
+            Debug.LogError($"Couldn't find item {inventoryItem.name} in inventory data!", this);
         }
         InventoryItemData oldData = inventoryData[oldSlotIndex];
         inventoryData[oldSlotIndex] = default;
         inventoryData[newSlotIndex] = oldData;
+
+        if (!newSlot.TryGetComponent(out ActionSlot actionSlot))
+        {
+            Item item = GetItemByName(oldData.itemName);
+            if (PlayerInventory.localInventory.IsHoldingItem(item))
+            {
+                PlayerInventory.localInventory.UnequipedItem(item);
+            }
+        }
     }
 
     public void AddItem(Item item)

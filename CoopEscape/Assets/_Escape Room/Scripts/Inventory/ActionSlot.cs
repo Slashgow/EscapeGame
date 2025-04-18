@@ -4,16 +4,16 @@ using UnityEngine.UI;
 public class ActionSlot : MonoBehaviour
 {
     [SerializeField] private Image slotImage;
-    [SerializeField] private Color activeColor;
+    [SerializeField] private Sprite activeSprite;
 
-    private Color originalColor;
+    private Sprite originalSprite;
     private void Awake()
     {
-        originalColor = slotImage.color;
+        originalSprite = slotImage.sprite;
     }
 
     public void ToggleActive(bool toggle)
     {
-        slotImage.color = toggle ? activeColor : originalColor;
+        slotImage.sprite = toggle ? activeSprite : originalSprite;
     }
 }
