@@ -90,9 +90,10 @@ public class InteractionManager : MonoBehaviour
 public abstract class AInteractable : NetworkBehaviour
 {
     public abstract void Interact();
-
-    public virtual void OnHover() { }
-    public virtual void OnStopHover() { }
+    public event Action OnHoverStart = delegate { };
+    public virtual void OnHover() { OnHoverStart?.Invoke(); }
+    public event Action OnHoverStop = delegate { };
+    public virtual void OnStopHover() { OnHoverStop?.Invoke(); }
     public virtual bool CanInteract()
     {
         return true;

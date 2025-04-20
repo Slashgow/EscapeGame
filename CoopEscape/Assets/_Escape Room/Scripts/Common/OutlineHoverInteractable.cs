@@ -1,0 +1,40 @@
+using PurrNet;
+using QuickOutline;
+using UnityEngine;
+
+[RequireComponent(typeof(Outline))]
+[RequireComponent (typeof(AInteractable))]
+public class OutlineHoverInteractable : MonoBehaviour
+{
+    private AInteractable interactable;
+    private Outline outline;
+    private void Start()
+    {
+        outline = GetComponent<Outline>();
+        interactable = GetComponent<AInteractable>();
+       
+        Debug.Log("subscribe to event outline");
+        interactable.OnHoverStart += Interactable_OnHoverStart;
+        interactable.OnHoverStop += Interactable_OnHoverStop; 
+        outline.enabled = false;
+    }
+
+    private void OnDisable()
+    {
+        if(interactable == null)
+            return;
+
+        interactable.OnHoverStart -= Interactable_OnHoverStart;
+        interactable.OnHoverStop -= Interactable_OnHoverStop;
+    }
+
+    private void Interactable_OnHoverStop()
+    {
+        outline.enabled = false;
+    }
+
+    private void Interactable_OnHoverStart()
+    {
+        outline.enabled = true;
+    }
+}

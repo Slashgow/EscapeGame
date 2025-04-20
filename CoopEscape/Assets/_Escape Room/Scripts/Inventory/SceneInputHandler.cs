@@ -42,6 +42,6 @@ public class SceneInputHandler : MonoSingleton<SceneInputHandler>
     private void scrollPerformed(InputAction.CallbackContext context)
     {
         ScrollValue = context.ReadValue<Vector2>();
-        Debug.Log(ScrollValue);
+        //Debug.Log(ScrollValue);
     }
 }

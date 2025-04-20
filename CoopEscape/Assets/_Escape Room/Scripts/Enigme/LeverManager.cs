@@ -2,12 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LeverManager : MonoBehaviour
 {
     [SerializeField] private List<Lever> levers;
 
     private bool isUnlocked;
+
+    public UnityEvent OnStartUnlockUnityEvent, OnStopUnlockUnityEvent;
 
     public event Action OnStartUnlock;
     public event Action OnStopUnlock;
@@ -25,6 +28,7 @@ public class LeverManager : MonoBehaviour
         {
             Debug.Log("Start Unlock lever");
             OnStartUnlock?.Invoke();
+            OnStartUnlockUnityEvent?.Invoke();
             isUnlocked = true;
         }
         else if(isUnlocked && !IsAllLeverEnabled())
@@ -32,6 +36,7 @@ public class LeverManager : MonoBehaviour
             Debug.Log("Stop Unlock lever");
             isUnlocked = false;
             OnStopUnlock?.Invoke();
+            OnStopUnlockUnityEvent?.Invoke();
         }
     }
 

@@ -17,12 +17,12 @@ public class Lever : AInteractable
     public override void OnHover()
     {
         base.OnHover();
-        Debug.Log("On Start Hover");
+        //Debug.Log("On Start Hover");
     }
 
     public override void OnStopHover()
     {
         base.OnStopHover();
-        Debug.Log("On stop Hover");
+        //Debug.Log("On stop Hover");
     }
 }

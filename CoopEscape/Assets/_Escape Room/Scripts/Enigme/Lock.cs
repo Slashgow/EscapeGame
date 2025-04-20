@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PurrNet;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Lock : NetworkBehaviour
@@ -10,6 +11,7 @@ public class Lock : NetworkBehaviour
     [SerializeField] private Button validationButton;
     [SerializeField] private List<LockNumber> lockNumbers;
 
+    public UnityEvent OnUnlockUnityEvent; 
     public bool IsUnlocked { get; private set; }
     public event Action OnUnlock;
 
@@ -31,6 +33,7 @@ public class Lock : NetworkBehaviour
         if (IsAllNumbersCorrect())
         {
             IsUnlocked = true;
+            OnUnlockUnityEvent?.Invoke();
             OnUnlock?.Invoke();
             Debug.Log("Is Unlocked");
         }

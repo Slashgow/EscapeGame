@@ -8,8 +8,8 @@ public class RotateToggler : MonoBehaviour
 {
     [SerializeField] private Axis rotationAxis;
     [SerializeField, Range(0f,5f)] private float timeToSwitch = 0.7f;
-    [SerializeField, Range(0, 360f)] private float startAngle;
-    [SerializeField, Range(0, 360f)] private float endAngle;
+    [SerializeField, Range(-360f, 360f)] private float startAngle;
+    [SerializeField, Range(-360f, 360f)] private float endAngle;
 
     private Tween rotateTween;
     private void Awake()
@@ -24,14 +24,14 @@ public class RotateToggler : MonoBehaviour
 
     public void SwitchRotationPosition()
     {
-        Debug.Log("switch rotation");
+        //Debug.Log("switch rotation");
         if(rotationAxis == Axis.X)
         {
-            Debug.Log("switch rotation x");
-            Debug.Log(this.transform.localEulerAngles.x);
-            Debug.Log(Mathf.Abs(this.transform.localEulerAngles.x - startAngle));
+            //Debug.Log("switch rotation x");
+            //Debug.Log(this.transform.localEulerAngles.x);
+            //Debug.Log(Mathf.Abs(this.transform.localEulerAngles.x - startAngle));
             float angle = Mathf.Abs(this.transform.localEulerAngles.x - startAngle) <= 0.1f ? endAngle : startAngle;
-            Debug.Log(angle);
+            //Debug.Log(angle);
             if(rotateTween != null)
                 rotateTween.Kill();
             
