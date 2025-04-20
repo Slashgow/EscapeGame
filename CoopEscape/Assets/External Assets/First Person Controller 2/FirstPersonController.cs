@@ -156,6 +156,14 @@ public class FirstPersonController : NetworkBehaviour
        
     }
 
+    public void MovePlayerTo(Transform targetTransform)
+    {
+        characterController.enabled = false;
+        this.transform.position = targetTransform.position;
+        this.transform.rotation = targetTransform.rotation;
+        characterController.enabled = true;
+    }
+
     private void ApplyHorizontalRotation(float rotationAmount)
     {
         transform.Rotate(0, rotationAmount, 0);

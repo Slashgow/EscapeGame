@@ -75,12 +75,12 @@ Material:
     - _Shore_Depth: 0
     - _Smoothness: 0.47
     - _Surface_Foam_Blend: 1
-    - _Surface_Foam_Color_Blend: 1
+    - _Surface_Foam_Color_Blend: 0.54
     - _Surface_Foam_Cutoff: 0.131
     - _Surface_Foam_Direction: 0.413
     - _Surface_Foam_Distortion: 0.94
     - _Surface_Foam_Speed: 0
-    - _Surface_Foam_Tiling: 41.8
+    - _Surface_Foam_Tiling: 14.7
     - _Wave_Length: 2.8
     - _Wave_Speed: 0.57
     - _Wave_Steepness: 0.027

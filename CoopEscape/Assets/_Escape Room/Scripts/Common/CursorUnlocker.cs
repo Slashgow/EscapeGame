@@ -2,24 +2,14 @@ using UnityEngine;
 
 public class CursorUnlocker : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public void ShowCursor()
     {
-        if(other.TryGetComponent(out Player player))
-        {
-            Debug.Log("enter cursor zone");
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
-
-    private void OnTriggerExit(Collider other)
+    public void HideCursor()
     {
-
-        if (other.TryGetComponent(out Player player))
-        {
-            Debug.Log("exit cursor zone");
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }

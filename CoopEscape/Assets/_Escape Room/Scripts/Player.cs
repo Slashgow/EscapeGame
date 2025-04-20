@@ -35,6 +35,7 @@ public class Player : NetworkBehaviour
         PlayerIDHelper.Instance.AddPlayerReference(playerReference);
     }
 
+
     protected override void OnDespawned()
     {
         base.OnDespawned();
