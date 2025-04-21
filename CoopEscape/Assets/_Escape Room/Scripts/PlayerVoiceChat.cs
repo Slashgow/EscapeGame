@@ -1,9 +1,12 @@
+using System;
 using PurrNet;
 using Steamworks;
 using UnityEngine;
 
 public class PlayerVoiceChat : NetworkBehaviour
 {
+    public static PlayerVoiceChat localPlayerVoiceChat;
+
     [SerializeField]
     private PlayerInputHandler playerInputHandler;
 
@@ -13,6 +16,8 @@ public class PlayerVoiceChat : NetworkBehaviour
     [SerializeField]
     private AudioSource playerAudioSource;
 
+    public event Action OnStartPushToTalk;
+    public event Action OnEndPushToTalk;
 
     private bool isPushToTalkRecording;
     private bool isProximityChatRecording;
@@ -22,6 +27,15 @@ public class PlayerVoiceChat : NetworkBehaviour
         base.OnSpawned();
 
         enabled = isOwner;
+
+        if (isOwner)
+        {
+            localPlayerVoiceChat = this;
+
+            Talkie talkie = FindAnyObjectByType<Talkie>();
+            talkie.RegisterEvent();
+        }
+            
     }
 
     private void Update()
@@ -31,6 +45,7 @@ public class PlayerVoiceChat : NetworkBehaviour
             SteamUser.StartVoiceRecording();
             Debug.Log("Start Recording");
             isPushToTalkRecording = true;
+            OnStartPushToTalk?.Invoke();
         }
         else if(isPushToTalkRecording && !playerInputHandler.PushToTalkTriggered)
         {
@@ -38,6 +53,7 @@ public class PlayerVoiceChat : NetworkBehaviour
                 SteamUser.StopVoiceRecording();
             Debug.Log("Stop Recording");
             isPushToTalkRecording = false;
+            OnEndPushToTalk?.Invoke();
         }
         else if (isPushToTalkRecording)
         {

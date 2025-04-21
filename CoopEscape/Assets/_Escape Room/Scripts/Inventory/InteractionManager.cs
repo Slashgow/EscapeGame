@@ -89,6 +89,10 @@ public class InteractionManager : MonoBehaviour
 
 public abstract class AInteractable : NetworkBehaviour
 {
+    [SerializeField]
+    private Transform attachPoint;
+    public Transform AttachPoint => attachPoint;
+
     public abstract void Interact();
     public event Action OnHoverStart = delegate { };
     public virtual void OnHover() { OnHoverStart?.Invoke(); }

@@ -54,7 +54,7 @@ public class FirstPersonController : NetworkBehaviour
         playerCamera = Camera.main;
         playerCamera.transform.SetParent(transform);
         playerCamera.transform.localPosition = cameraOffset;
-        itemAttachPoint.SetParent(playerCamera.transform);
+        //itemAttachPoint.SetParent(playerCamera.transform);
         if(playerCamera == null)
         {
             enabled = false;

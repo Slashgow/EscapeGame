@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 9
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 543904ca83630cd46a5b87a544414965, type: 2}
-  m_sharedMaterial: {fileID: 6869273836088463072, guid: 543904ca83630cd46a5b87a544414965, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 31f924d7f0151c542bdc363408d1829d, type: 2}
+  m_sharedMaterial: {fileID: 1517786901348113405, guid: 31f924d7f0151c542bdc363408d1829d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -334,6 +334,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6721163aec45c8f46b4f1e12e9895795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
   unlockNumber: 0
   previousNumberButton: {fileID: 5288291253802892727}
   nextNumberButton: {fileID: 8063079228633419768}
