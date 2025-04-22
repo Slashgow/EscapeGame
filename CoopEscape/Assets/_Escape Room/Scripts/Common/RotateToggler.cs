@@ -24,14 +24,14 @@ public class RotateToggler : MonoBehaviour
 
     public void SwitchRotationPosition()
     {
-        //Debug.Log("switch rotation");
+        Debug.Log("switch rotation");
         if(rotationAxis == Axis.X)
         {
-            //Debug.Log("switch rotation x");
-            //Debug.Log(this.transform.localEulerAngles.x);
-            //Debug.Log(Mathf.Abs(this.transform.localEulerAngles.x - startAngle));
+            Debug.Log("switch rotation x");
+            Debug.Log(this.transform.localEulerAngles.x);
+            Debug.Log(Mathf.Abs(this.transform.localEulerAngles.x - startAngle));
             float angle = Mathf.Abs(this.transform.localEulerAngles.x - startAngle) <= 0.1f ? endAngle : startAngle;
-            //Debug.Log(angle);
+                Debug.Log(angle);
             if(rotateTween != null)
                 rotateTween.Kill();
             
@@ -39,15 +39,25 @@ public class RotateToggler : MonoBehaviour
         }
         else if (rotationAxis == Axis.Y)
         {
-            float angle = startAngle == this.transform.localEulerAngles.y ? endAngle : startAngle;
-            this.transform.DOLocalRotate(new Vector3(this.transform.localEulerAngles.x, angle, this.transform.localEulerAngles.z), timeToSwitch);
+            float angle = Mathf.Abs(this.transform.localEulerAngles.y - startAngle) <= 0.1f ? endAngle : startAngle;
+
+            if (rotateTween != null)
+                rotateTween.Kill();
+
+            rotateTween = this.transform.DOLocalRotate(new Vector3(this.transform.localEulerAngles.x, angle, this.transform.localEulerAngles.z), timeToSwitch);
         }
             
         else if (rotationAxis == Axis.Z)
         {
-            float angle = startAngle == this.transform.localEulerAngles.z ? endAngle : startAngle;
-            this.transform.DOLocalRotate( new Vector3(this.transform.localEulerAngles.x, this.transform.localEulerAngles.y, angle), timeToSwitch);
+            float angle = Mathf.Abs(this.transform.localEulerAngles.z - startAngle) <= 0.1f ? endAngle : startAngle;
+
+            if (rotateTween != null)
+                rotateTween.Kill();
+
+            rotateTween = this.transform.DOLocalRotate( new Vector3(this.transform.localEulerAngles.x, this.transform.localEulerAngles.y, angle), timeToSwitch);
         }
     }
+
+   
           
 }

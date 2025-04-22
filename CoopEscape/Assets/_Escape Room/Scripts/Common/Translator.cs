@@ -55,4 +55,34 @@ public class Translator : MonoBehaviour
         }
     }
 
+    public void ReverseTranslate()
+    {
+        if (translationAxis == Axis.X)
+        {
+            if (translationTween != null)
+                translationTween.Kill();
+
+            translationTween = this.transform.DOLocalMove(new Vector3(startAxisPosition, this.transform.localPosition.y, this.transform.localPosition.z), this.transform.localPosition.x * translationDuration / stopAxisPosition)
+                .OnComplete(() => OnEndTranslation?.Invoke());
+        }
+        else if (translationAxis == Axis.Y)
+        {
+            if (translationTween != null)
+                translationTween.Kill();
+
+            translationTween = this.transform.DOLocalMove(new Vector3(this.transform.localPosition.x, startAxisPosition, this.transform.localPosition.z), (this.transform.localPosition.y * translationDuration) / stopAxisPosition)
+                .OnComplete(() => OnEndTranslation?.Invoke()); ;
+        }
+
+        else if (translationAxis == Axis.Z)
+        {
+            if (translationTween != null)
+                translationTween.Kill();
+
+            translationTween = this.transform.DOLocalMove(new Vector3(this.transform.localPosition.x, this.transform.localPosition.y, startAxisPosition), this.transform.localPosition.z * translationDuration / stopAxisPosition)
+                .OnComplete(() => OnEndTranslation?.Invoke()); ;
+        }
+    }
+
+
 }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class LockNumber : NetworkBehaviour
 {
     [SerializeField, Range(0, 9)] private int unlockNumber; 
-    [SerializeField] private Button previousNumberButton, nextNumberButton;
+    [SerializeField] private UnityEngine.UI.Button previousNumberButton, nextNumberButton;
     [SerializeField] private TextMeshProUGUI numberText;
 
     private static readonly int[] digits = { 0,1, 2,3, 4,5,6,7,8,9 };

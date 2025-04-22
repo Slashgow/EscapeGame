@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5005239749173843167}
   - component: {fileID: 6341671094847758457}
   - component: {fileID: 8560052274222206008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: torche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 3713315349528695313}
   - component: {fileID: 6684721167101793570}
   - component: {fileID: 506507291081796542}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Torche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5340212582660758823}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 0, y: 3.224, z: -7.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -181,7 +181,7 @@ Transform:
   - {fileID: 7106904957311863281}
   - {fileID: 6904134035056769865}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!114 &3713315349528695313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5340212582660758823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7088fc5a86c0cc747a3697d61b5d568d, type: 3}
+  m_Script: {fileID: 11500000, guid: afeb285c2cf58714fbb54ffb4a1f7dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _isSetup: 0
@@ -207,6 +207,10 @@ MonoBehaviour:
   itemName: Torche
   itemPicture: {fileID: 21300000, guid: 4a4e0f19189c1a946920ba42f8cea18f, type: 3}
   rigidbody: {fileID: 8560052274222206008}
+  interactionDistance: 4
+  ignitableLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &6684721167101793570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,7 +236,7 @@ MonoBehaviour:
   _syncRotation: 1
   _syncScale: 1
   _syncParent: 1
-  _interpolateSettings: 7
+  _interpolateSettings: 255
   _minBufferSize: 1
   _maxBufferSize: 2
   _characterControllerPatch: 0
@@ -307,9 +311,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2670923554171423535, guid: 56f02590ce7db2347803864c84dd78d3, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3599447086356864173, guid: 56f02590ce7db2347803864c84dd78d3, type: 3}
       propertyPath: m_Name
       value: VFX_TorchLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599447086356864173, guid: 56f02590ce7db2347803864c84dd78d3, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3872577823437584030, guid: 56f02590ce7db2347803864c84dd78d3, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

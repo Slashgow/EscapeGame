@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class Lock : NetworkBehaviour
 {
-    [SerializeField] private Button validationButton;
+    [SerializeField] private UnityEngine.UI.Button validationButton;
     [SerializeField] private List<LockNumber> lockNumbers;
 
     public UnityEvent OnUnlockUnityEvent; 

@@ -36,6 +36,20 @@ public class PlayerInventory : NetworkBehaviour
         localInventory = null;
     }
 
+    private void Update()
+    {
+        if (SceneInputHandler.Instance.IsUseInteractablePressed)
+            UseItem();
+    }
+
+    private void UseItem()
+    {
+        if (!itemInHand)
+            return;
+
+        itemInHand.Use();
+    }
+
     public void EquipItem(Item item)
     {
         if (!item)

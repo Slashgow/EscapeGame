@@ -93,11 +93,23 @@ public abstract class AInteractable : NetworkBehaviour
     private Transform attachPoint;
     public Transform AttachPoint => attachPoint;
 
+    public bool IsHovering { get; private set; }
+
+    public virtual void Use() { }
+    public virtual void HoldInteract() { }
     public abstract void Interact();
     public event Action OnHoverStart = delegate { };
-    public virtual void OnHover() { OnHoverStart?.Invoke(); }
+    public virtual void OnHover() 
+    { 
+        IsHovering = true;
+        OnHoverStart?.Invoke(); 
+    }
     public event Action OnHoverStop = delegate { };
-    public virtual void OnStopHover() { OnHoverStop?.Invoke(); }
+    public virtual void OnStopHover() 
+    {
+        IsHovering = false;
+        OnHoverStop?.Invoke(); 
+    }
     public virtual bool CanInteract()
     {
         return true;

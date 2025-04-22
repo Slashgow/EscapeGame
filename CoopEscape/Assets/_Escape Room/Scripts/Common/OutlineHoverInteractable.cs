@@ -13,7 +13,7 @@ public class OutlineHoverInteractable : MonoBehaviour
         outline = GetComponent<Outline>();
         interactable = GetComponent<AInteractable>();
        
-        Debug.Log("subscribe to event outline");
+        Debug.Log($"subscribe to event outline {interactable.name}");
         interactable.OnHoverStart += Interactable_OnHoverStart;
         interactable.OnHoverStop += Interactable_OnHoverStop; 
         outline.enabled = false;
