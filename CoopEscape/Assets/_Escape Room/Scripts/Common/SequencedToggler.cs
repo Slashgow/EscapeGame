@@ -7,6 +7,7 @@ public class SequencedToggler : MonoBehaviour
     [SerializeField] private List<GameObject> gameObjectsToToggle = new List<GameObject>();
     [SerializeField, Range(0f, 3f)] private float timeBetweenToggle;
     [SerializeField] private bool disableOnStart = true;
+    [SerializeField] private bool switchOffOnEnd = true;
 
     private Coroutine coroutine;
     private int index = 0;
@@ -39,6 +40,12 @@ public class SequencedToggler : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenToggle);
         }
 
+
+        if (switchOffOnEnd)
+            gameObjectsToToggle.ForEach(gameObjectToToggle => gameObjectToToggle.SetActive(false));
+
         yield return null;
+
+      
     }
 }
