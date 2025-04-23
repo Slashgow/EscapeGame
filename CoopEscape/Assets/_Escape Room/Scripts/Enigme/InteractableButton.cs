@@ -1,3 +1,4 @@
+using System;
 using PurrNet;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,11 +12,16 @@ public enum ButtonInteraction
 public class InteractableButton : AInteractable
 {
     [SerializeField] private ButtonInteraction buttonInteraction;
+    [SerializeField] private bool triggerClickOnlyOnce;
+
+    [SerializeField] private bool isDebugHold;
 
     public UnityEvent OnHoldButton;
     public UnityEvent OnStopHoldButton;
     public UnityEvent OnClick;
+    public event Action<InteractableButton> OnClickInteractable = delegate { };
 
+    public bool IsPushed => isPushed;
     private bool isPushed;
 
     [ObserversRpc]
@@ -23,8 +29,25 @@ public class InteractableButton : AInteractable
     {
         if(buttonInteraction == ButtonInteraction.Click && !isPushed)
         {
-            //isPushed = true;
+            if(triggerClickOnlyOnce)
+                isPushed = true;
+
             OnClick?.Invoke();
+            OnClickInteractable?.Invoke(this);
+        }
+
+        if (isDebugHold)
+        {
+            if (isPushed)
+            {
+                isPushed = false;
+                StopHolding();
+            }
+            else 
+            {
+                isPushed = true;
+                StartHolding();
+            }
         }
     }
 
@@ -32,7 +55,7 @@ public class InteractableButton : AInteractable
     {
         base.OnStopHover();
 
-        if (buttonInteraction != ButtonInteraction.Hold)
+        if (buttonInteraction != ButtonInteraction.Hold || isDebugHold)
             return;
 
         if (!isPushed )
@@ -44,7 +67,7 @@ public class InteractableButton : AInteractable
 
     private void Update()
     {
-        if(buttonInteraction != ButtonInteraction.Hold)
+        if(buttonInteraction != ButtonInteraction.Hold || isDebugHold)
             return;
 
         if(IsHovering && isPushed && !SceneInputHandler.Instance.IsClickCurrentlyPressed)

@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class Ignitable : AInteractable, IIgnitable
 {
-    [SerializeField]
-    private GameObject flame;
+    [SerializeField] private GameObject flame;
+    public GameObject Flame => flame;
+
+    [SerializeField] private AudioSource audioSource;
+    public AudioSource AudioSource => audioSource;
 
     public bool IsIgnited { get; set; } = false;
 
     public event Action<Ignitable> OnStartIgnite = delegate { };
+    public event Action OnUnignite = delegate { };
 
     [ObserversRpc]
     public void Ignite()
@@ -20,6 +24,7 @@ public class Ignitable : AInteractable, IIgnitable
         IsIgnited = true;
         OnStartIgnite?.Invoke(this);
         flame.SetActive(true);
+        audioSource.Play();
     }
 
     [ObserversRpc]
@@ -28,6 +33,7 @@ public class Ignitable : AInteractable, IIgnitable
         if(!IsIgnited)
             return;
 
+        OnUnignite?.Invoke();
         IsIgnited = false;
         flame.SetActive(false);
     }

@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LockNumber : NetworkBehaviour
+public class LockNumber : Pin
 {
     [SerializeField, Range(0, 9)] private int unlockNumber; 
     [SerializeField] private UnityEngine.UI.Button previousNumberButton, nextNumberButton;
@@ -13,7 +13,7 @@ public class LockNumber : NetworkBehaviour
     private static readonly int[] digits = { 0,1, 2,3, 4,5,6,7,8,9 };
     private int currentDigitIndex;
     public int CurrentNumber { get; private set; }
-    public bool IsUnlocked => CurrentNumber == unlockNumber;
+    public override bool IsUnlocked => CurrentNumber == unlockNumber;
 
     protected override void OnSpawned()
     {

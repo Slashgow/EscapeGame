@@ -19,14 +19,22 @@ public class TorcheIgniterManager : MonoBehaviour
 
     private void Start()
     {
-        orderedIgnitables.ForEach(ignitable => ignitable.OnStartIgnite += Ignitable_OnStartIgnite);
+        orderedIgnitables.ForEach(ignitable =>
+        { ignitable.OnStartIgnite += Ignitable_OnStartIgnite;
+            ignitable.OnUnignite += Ignitable_OnUnignite;
+        });
         ResetAll();
     }
 
     private void OnDisable()
     {
-        orderedIgnitables.ForEach(ignitable => ignitable.OnStartIgnite -= Ignitable_OnStartIgnite);
+        orderedIgnitables.ForEach(ignitable =>
+        {
+            ignitable.OnStartIgnite -= Ignitable_OnStartIgnite;
+            ignitable.OnUnignite -= Ignitable_OnUnignite;
+        });
     }
+    private void Ignitable_OnUnignite() => ResetAll();
 
     private void Ignitable_OnStartIgnite(Ignitable ignitable)
     {
@@ -47,6 +55,9 @@ public class TorcheIgniterManager : MonoBehaviour
             SwitchColorIndicatorMaterial(orderedColorIndicators[currentColorIndex], wrongColorIndicatorMaterial);
             currentColorIndex++;
         }
+
+        if (currentColorIndex >= orderedIgnitables.Count)
+            return; 
 
         UpdateNeedleRotation(currentColorIndex);
     }

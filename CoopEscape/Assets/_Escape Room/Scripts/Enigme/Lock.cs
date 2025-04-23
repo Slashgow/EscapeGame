@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class Lock : NetworkBehaviour
 {
     [SerializeField] private UnityEngine.UI.Button validationButton;
-    [SerializeField] private List<LockNumber> lockNumbers;
+    [SerializeField] private List<Pin> pins;
 
     public UnityEvent OnUnlockUnityEvent; 
     public bool IsUnlocked { get; private set; }
@@ -41,7 +41,7 @@ public class Lock : NetworkBehaviour
 
     private bool IsAllNumbersCorrect()
     {
-        if (lockNumbers.All(x => x.IsUnlocked))
+        if (pins.All(x => x.IsUnlocked))
             return true;
 
         return false;

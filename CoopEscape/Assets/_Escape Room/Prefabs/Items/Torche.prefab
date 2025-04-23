@@ -157,6 +157,8 @@ GameObject:
   - component: {fileID: 3713315349528695313}
   - component: {fileID: 6684721167101793570}
   - component: {fileID: 506507291081796542}
+  - component: {fileID: 8416730021746144329}
+  - component: {fileID: 4254054835323055677}
   m_Layer: 8
   m_Name: Torche
   m_TagString: Untagged
@@ -263,6 +265,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.26367348, y: 0.2703363, z: 2.4027793}
   m_Center: {x: -0.0049977005, y: 0.011661326, z: 1.1845028}
+--- !u!114 &8416730021746144329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5340212582660758823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0.91764706, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &4254054835323055677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5340212582660758823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f2c22bf252423a4fa3f0df4430a5dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8859409222891528616
 PrefabInstance:
   m_ObjectHideFlags: 0

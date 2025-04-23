@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SequencedToggler : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> gameObjectsToToggle = new List<GameObject>();
+    [SerializeField] private List<Ignitable> ignitablesToToggle = new List<Ignitable>();
     [SerializeField, Range(0f, 3f)] private float timeBetweenToggle;
     [SerializeField] private bool disableOnStart = true;
     [SerializeField] private bool switchOffOnEnd = true;
@@ -14,7 +15,7 @@ public class SequencedToggler : MonoBehaviour
 
     private void Awake()
     {
-        gameObjectsToToggle.ForEach(gameObjectToToggle => gameObjectToToggle.SetActive(!disableOnStart));
+        ignitablesToToggle.ForEach(ignitable => ignitable.Flame.SetActive(!disableOnStart));
     }
 
     [ContextMenu("Toggle Sequentially")]
@@ -33,16 +34,16 @@ public class SequencedToggler : MonoBehaviour
     {
         index = 0;
        
-        while (index < gameObjectsToToggle.Count)
+        while (index < ignitablesToToggle.Count)
         {
-            gameObjectsToToggle[index].SetActive(disableOnStart);
+            ignitablesToToggle[index].Ignite();
             index++;
             yield return new WaitForSeconds(timeBetweenToggle);
         }
 
 
         if (switchOffOnEnd)
-            gameObjectsToToggle.ForEach(gameObjectToToggle => gameObjectToToggle.SetActive(false));
+            ignitablesToToggle.ForEach(ignitable => ignitable.Unignite());
 
         yield return null;
 
