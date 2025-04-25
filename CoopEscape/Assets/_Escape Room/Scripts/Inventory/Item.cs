@@ -30,7 +30,12 @@ public class Item : AInteractable
     }
 
     [ObserversRpc]
-    public void SetHoldStatuts(bool p_isHeld) => isHeld = p_isHeld;
+    public void SetHoldStatuts(bool p_isHeld)
+    {
+        Debug.Log($"set hold status {itemName} to {p_isHeld}");
+        isHeld = p_isHeld;
+    }
+
     public override bool CanInteract() => !isHeld;
 
     [ContextMenu("Test Pickup")]
