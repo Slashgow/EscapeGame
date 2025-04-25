@@ -144,8 +144,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0005285756, y: 0.00049499486, z: 0.0027374285}
-  m_Center: {x: 0.000002514363, y: -0.000015981926, z: 0.0011605374}
+  m_Size: {x: 0.00081436115, y: 0.00072216644, z: 0.0027374285}
+  m_Center: {x: 0.000035226974, y: -0.000019903739, z: 0.001160538}
 --- !u!114 &7706729811545224793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +167,7 @@ MonoBehaviour:
   _directChildren: []
   _networkRules: {fileID: 0}
   _visitiblityRules: {fileID: 0}
+  attachPoint: {fileID: 0}
   OnToggle:
     m_PersistentCalls:
       m_Calls:
@@ -243,7 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 0, g: 0.9631133, b: 1, a: 1}
-  outlineWidth: 2
+  outlineWidth: 10
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -259,6 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2c22bf252423a4fa3f0df4430a5dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: {fileID: 7706729811545224793}
 --- !u!1001 &8878507879472500431
 PrefabInstance:
   m_ObjectHideFlags: 0

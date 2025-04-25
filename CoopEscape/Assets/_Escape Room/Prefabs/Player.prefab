@@ -3688,6 +3688,8 @@ GameObject:
   - component: {fileID: 4859315096397973224}
   - component: {fileID: 7278101234288199453}
   - component: {fileID: 8334346756808648373}
+  - component: {fileID: 3033259734052538426}
+  - component: {fileID: 7012725208769902509}
   - component: {fileID: 7313460753356400894}
   - component: {fileID: 1939441261882779962}
   - component: {fileID: 1575012055012547760}
@@ -3736,7 +3738,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 1
-  m_Radius: 0.41
+  m_Radius: 0.29
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.0003
@@ -3764,7 +3766,7 @@ MonoBehaviour:
   _networkRules: {fileID: 0}
   _visitiblityRules: {fileID: 0}
   walkSpeed: 3
-  sprintMultiplier: 1.4
+  sprintMultiplier: 2
   jumpForce: 5
   gravityMultiplier: 1
   mouseSensitivity: 0.1
@@ -3812,7 +3814,7 @@ AudioSource:
   m_GameObject: {fileID: 8303163789683781607}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4977961773645694478, guid: bcd2a9cbd99489f488e38522c9c595cd, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -3900,6 +3902,41 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!169 &3033259734052538426
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8303163789683781607}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 3
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.09049568
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!165 &7012725208769902509
+AudioHighPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8303163789683781607}
+  m_Enabled: 1
+  m_CutoffFrequency: 1000
+  m_HighpassResonanceQ: 10
 --- !u!114 &7313460753356400894
 MonoBehaviour:
   m_ObjectHideFlags: 0

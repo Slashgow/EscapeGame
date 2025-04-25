@@ -72,7 +72,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 0, g: 0.9647059, b: 1, a: 1}
-  outlineWidth: 2
+  outlineWidth: 10
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2c22bf252423a4fa3f0df4430a5dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: {fileID: 3633092205218120674}
 --- !u!114 &3633092205218120674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,6 +111,18 @@ MonoBehaviour:
   _networkRules: {fileID: 0}
   _visitiblityRules: {fileID: 0}
   attachPoint: {fileID: 0}
+  buttonInteraction: 0
+  triggerClickOnlyOnce: 0
+  isDebugHold: 0
+  OnHoldButton:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStopHoldButton:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6380849415608067772
 GameObject:
   m_ObjectHideFlags: 0

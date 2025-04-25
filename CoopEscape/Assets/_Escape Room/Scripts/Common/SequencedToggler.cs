@@ -13,10 +13,10 @@ public class SequencedToggler : MonoBehaviour
     private Coroutine coroutine;
     private int index = 0;
 
-    private void Awake()
-    {
-        ignitablesToToggle.ForEach(ignitable => ignitable.Flame.SetActive(!disableOnStart));
-    }
+    //private void Awake()
+    //{
+    //    ignitablesToToggle.ForEach(ignitable => ignitable.Flame.SetActive(!disableOnStart));
+    //}
 
     [ContextMenu("Toggle Sequentially")]
     public void ToggleSequentially()

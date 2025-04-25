@@ -5,11 +5,17 @@ namespace TabUI
 {
     public class TabGroup : MonoBehaviour
     {
-        [SerializeField] private List<TabButton> tabButtons;
+        [SerializeField] private TabButton defaultTab;
+        private List<TabButton> tabButtons;
         [SerializeField] private Sprite tabIdle, tabHover, tabActive;
         [SerializeField] private List<GameObject> objectsToSwap = new List<GameObject>();
 
         private TabButton selectedTab;
+
+        private void Start()
+        {
+            OnTabSelected(defaultTab);
+        }
 
         public void Subscribe(TabButton tabButton)
         {

@@ -16,7 +16,7 @@ namespace TabUI
         private Image background;
         public Image Background => background;
 
-        private void Start()
+        private void Awake()
         {
             background = GetComponent<Image>();
             tabGroup.Subscribe(this);

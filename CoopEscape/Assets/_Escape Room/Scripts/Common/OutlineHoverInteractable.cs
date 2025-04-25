@@ -3,15 +3,15 @@ using QuickOutline;
 using UnityEngine;
 
 [RequireComponent(typeof(Outline))]
-[RequireComponent (typeof(AInteractable))]
+
 public class OutlineHoverInteractable : MonoBehaviour
 {
-    private AInteractable interactable;
+    [SerializeField] private AInteractable interactable;
     private Outline outline;
     private void Start()
     {
         outline = GetComponent<Outline>();
-        interactable = GetComponent<AInteractable>();
+        //interactable = GetComponent<AInteractable>();
        
         Debug.Log($"subscribe to event outline {interactable.name}");
         interactable.OnHoverStart += Interactable_OnHoverStart;

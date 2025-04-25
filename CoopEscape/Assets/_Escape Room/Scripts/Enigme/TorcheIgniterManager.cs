@@ -23,7 +23,7 @@ public class TorcheIgniterManager : MonoBehaviour
         { ignitable.OnStartIgnite += Ignitable_OnStartIgnite;
             ignitable.OnUnignite += Ignitable_OnUnignite;
         });
-        ResetAll();
+        ResetLocal();
     }
 
     private void OnDisable()
@@ -67,6 +67,14 @@ public class TorcheIgniterManager : MonoBehaviour
     public void ResetAll()
     {
         orderedIgnitables.ForEach(ignitable => ignitable.Unignite());
+        orderedColorIndicators.ForEach(colorIndicator => SwitchColorIndicatorMaterial(colorIndicator, defaultColorIndicatorMaterial));
+        currentIgnitableIndex = 0;
+        currentColorIndex = 0;
+        UpdateNeedleRotation(currentColorIndex);
+    }
+
+    public void ResetLocal()
+    {
         orderedColorIndicators.ForEach(colorIndicator => SwitchColorIndicatorMaterial(colorIndicator, defaultColorIndicatorMaterial));
         currentIgnitableIndex = 0;
         currentColorIndex = 0;

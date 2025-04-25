@@ -10,6 +10,9 @@ namespace PurrLobby
         [SerializeField] private List<View> allViews = new();
         [SerializeField] private View defaultView;
 
+        private View previousView;
+        private View currentView;
+
         private void Start()
         {
             foreach (var view in allViews)
@@ -53,6 +56,13 @@ namespace PurrLobby
             view.canvasGroup.blocksRaycasts = true;
             view.OnShow();
             view.OnViewShow?.Invoke();
+
+            if (previousView != null && currentView == view)
+                return;
+
+            previousView = currentView;
+
+            currentView = view;
         }
 
         private void HideViewInternal(View view)
@@ -69,6 +79,15 @@ namespace PurrLobby
             
             view.OnHide();
             view.OnViewHide?.Invoke();
+        }
+
+        public void Back()
+        {
+            foreach (var view in allViews)
+            {
+                HideViewInternal(view);
+            }
+            ShowViewInternal(previousView);
         }
 
         #region Events

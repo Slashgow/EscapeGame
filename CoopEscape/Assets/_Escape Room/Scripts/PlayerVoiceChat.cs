@@ -16,6 +16,8 @@ public class PlayerVoiceChat : NetworkBehaviour
     [SerializeField]
     private AudioSource playerAudioSource;
 
+    private Talkie talkie;
+
     public event Action OnStartPushToTalk;
     public event Action OnEndPushToTalk;
 
@@ -32,7 +34,7 @@ public class PlayerVoiceChat : NetworkBehaviour
         {
             localPlayerVoiceChat = this;
 
-            Talkie talkie = FindAnyObjectByType<Talkie>();
+            talkie = FindAnyObjectByType<Talkie>();
             talkie.RegisterEvent();
         }
             
@@ -45,6 +47,7 @@ public class PlayerVoiceChat : NetworkBehaviour
             SteamUser.StartVoiceRecording();
             Debug.Log("Start Recording");
             isPushToTalkRecording = true;
+            StartRecording();
             OnStartPushToTalk?.Invoke();
         }
         else if(isPushToTalkRecording && !playerInputHandler.PushToTalkTriggered)
@@ -53,6 +56,7 @@ public class PlayerVoiceChat : NetworkBehaviour
                 SteamUser.StopVoiceRecording();
             Debug.Log("Stop Recording");
             isPushToTalkRecording = false;
+            StopRecording();
             OnEndPushToTalk?.Invoke();
         }
         else if (isPushToTalkRecording)
@@ -63,7 +67,7 @@ public class PlayerVoiceChat : NetworkBehaviour
 
         else if (!isProximityChatRecording && PlayerIDHelper.Instance.DistanceBetweenPlayer() < distanceToRecordProximityChat)
         {
-            Debug.Log("min distance OK");
+            //Debug.Log("min distance OK");
             isProximityChatRecording = true;
             SteamUser.StartVoiceRecording();
         }
@@ -81,7 +85,7 @@ public class PlayerVoiceChat : NetworkBehaviour
     private void HandleVoiceRecording(bool writeOnSenderAudioSource)
     {
         EVoiceResult voiceResult = SteamUser.GetAvailableVoice(out uint compressed);
-        Debug.Log($"voice result : {voiceResult.ToString()}");  
+        //Debug.Log($"voice result : {voiceResult.ToString()}");  
         if (voiceResult == EVoiceResult.k_EVoiceResultOK && compressed > 1024)
         {
             Debug.Log(compressed);
@@ -97,15 +101,15 @@ public class PlayerVoiceChat : NetworkBehaviour
     [ServerRpc]
     private void SendVoiceToOtherPlayer(PlayerID? target, bool writeOnSenderAudioSource, byte[] data, uint bytesWritten, RPCInfo info = default)
     {
-        Debug.Log($"Send voice to other player server : {info.sender}");
+        //Debug.Log($"Send voice to other player server : {info.sender}");
         SendVoiceToOtherPlayer_Target((PlayerID)target, writeOnSenderAudioSource, data, bytesWritten);
     }
 
     [TargetRpc]
     private void SendVoiceToOtherPlayer_Target(PlayerID target, bool writeOnSenderAudioSource, byte[] data, uint bytesWritten, RPCInfo info = default)
     {
-        Debug.Log($"send voice to other player target {target}");
-        Debug.Log($"send voice to other player target, Sender: {info.sender}");
+       // Debug.Log($"send voice to other player target {target}");
+       // Debug.Log($"send voice to other player target, Sender: {info.sender}");
 
         byte[] destBuffer2 = new byte[22050 * 2];
         uint bytesWritten2;
@@ -124,5 +128,17 @@ public class PlayerVoiceChat : NetworkBehaviour
             audioSource.clip.SetData(test, 0);
             audioSource.Play();
         }
+    }
+
+    [ObserversRpc]
+    public void StartRecording()
+    {
+        talkie.TalkieSFXAudioSource.Play();
+    }
+
+    [ObserversRpc]
+    public void StopRecording()
+    {
+        talkie.TalkieSFXAudioSource.Play();
     }
 }

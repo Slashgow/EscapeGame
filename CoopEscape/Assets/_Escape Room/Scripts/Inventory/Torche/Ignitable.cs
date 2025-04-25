@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class Ignitable : AInteractable, IIgnitable
 {
-    [SerializeField] private GameObject flame;
+    [SerializeField] private GameObject flame, flameLight;
     public GameObject Flame => flame;
 
     [SerializeField] private AudioSource audioSource;
     public AudioSource AudioSource => audioSource;
 
-    public bool IsIgnited { get; set; } = false;
+    public bool IsIgnited { get; set; } = true;
 
     public event Action<Ignitable> OnStartIgnite = delegate { };
     public event Action OnUnignite = delegate { };
+
+    protected override void OnSpawned()
+    {
+        base.OnSpawned();
+
+        IsIgnited = false;
+        flame.SetActive(false);
+        flameLight.SetActive(false);
+    }
 
     [ObserversRpc]
     public void Ignite()
@@ -21,9 +30,11 @@ public class Ignitable : AInteractable, IIgnitable
         if(IsIgnited)
             return;
 
+        Debug.Log("ignite");
         IsIgnited = true;
         OnStartIgnite?.Invoke(this);
         flame.SetActive(true);
+        flameLight.SetActive(true);
         audioSource.Play();
     }
 
@@ -33,9 +44,11 @@ public class Ignitable : AInteractable, IIgnitable
         if(!IsIgnited)
             return;
 
-        OnUnignite?.Invoke();
+        Debug.Log("unignite");
         IsIgnited = false;
         flame.SetActive(false);
+        flameLight.SetActive(false);
+        OnUnignite?.Invoke();
     }
     public override void Interact()
     {

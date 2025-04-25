@@ -14,15 +14,18 @@ public class SceneInputHandler : MonoSingleton<SceneInputHandler>
     [SerializeField] private string click = "Click";
     [SerializeField] private string scroll = "ScrollItem";
     [SerializeField] private string useInteractable = "UseInteractable";
+    [SerializeField] private string toggleSettings = "ToggleSettings";
 
     private InputAction inventoryAction;
     private InputAction clickAction;
     private InputAction scrollAction;
     private InputAction useInteractableAction;
+    private InputAction toggleSettingsAction;
     public bool InventoryTriggered => inventoryAction?.WasPressedThisFrame() ?? false;
     public bool ClickPressed => clickAction?.WasPressedThisFrame() ?? false;
     public bool IsClickCurrentlyPressed => clickAction?.IsPressed() ?? false;
     public bool IsUseInteractablePressed => useInteractableAction?.WasPressedThisFrame() ?? false;
+    public bool IsToggleSettingsPressed => toggleSettingsAction?.WasPressedThisFrame() ?? false;
     
     public Vector2 ScrollValue { get; private set; }
 
@@ -35,6 +38,7 @@ public class SceneInputHandler : MonoSingleton<SceneInputHandler>
         clickAction = mapReference.FindAction(click);
         scrollAction = mapReference.FindAction(scroll);
         useInteractableAction = mapReference.FindAction(useInteractable);
+        toggleSettingsAction = mapReference.FindAction(toggleSettings);
 
         SubscribeActionValuesToInputEvents();
     }

@@ -16,6 +16,7 @@ public class PlayerInventory : NetworkBehaviour
     private Coroutine coroutine;
 
     private Item itemInHand;
+    public Item ItemInHand => itemInHand;
     protected override void OnSpawned()
     {
         base.OnSpawned();
