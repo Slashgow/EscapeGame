@@ -10,6 +10,13 @@ public class Item : AInteractable
 
     private SyncVar<bool> isHeld = new(false, ownerAuth: true);
 
+    protected override void OnSpawned()
+    {
+        base.OnSpawned();
+
+        Debug.Log($"{itemName} spawned");
+    }
+
     protected override void OnOwnerChanged(PlayerID? oldOwner, PlayerID? newOwner, bool asServer)
     {
         base.OnOwnerChanged(oldOwner, newOwner, asServer);
