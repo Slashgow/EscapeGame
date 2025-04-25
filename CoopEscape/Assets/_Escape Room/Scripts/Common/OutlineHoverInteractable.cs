@@ -30,11 +30,13 @@ public class OutlineHoverInteractable : MonoBehaviour
 
     private void Interactable_OnHoverStop()
     {
+        Debug.Log($"hover stop, disable outline {interactable.name}");
         outline.enabled = false;
     }
 
     private void Interactable_OnHoverStart()
     {
+        Debug.Log($"hover start, enable outline {interactable.name}");
         outline.enabled = true;
     }
 }
