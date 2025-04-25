@@ -8,7 +8,7 @@ public class OutlineHoverInteractable : MonoBehaviour
 {
     [SerializeField] private AInteractable interactable;
     private Outline outline;
-    private void Start()
+    private void OnEnable()
     {
         outline = GetComponent<Outline>();
         //interactable = GetComponent<AInteractable>();
@@ -24,6 +24,7 @@ public class OutlineHoverInteractable : MonoBehaviour
         if(interactable == null)
             return;
 
+        Debug.Log($"unsubscribe to event outline {interactable.name}");
         interactable.OnHoverStart -= Interactable_OnHoverStart;
         interactable.OnHoverStop -= Interactable_OnHoverStop;
     }
