@@ -16,6 +16,12 @@ public class PlayerVoiceChat : NetworkBehaviour
     [SerializeField]
     private AudioSource playerAudioSource;
 
+    [SerializeField]
+    private AudioLowPassFilter lowPassFilter;
+
+    [SerializeField]
+    private AudioHighPassFilter highPassFilter;
+
     private Talkie talkie;
 
     public event Action OnStartPushToTalk;
@@ -45,6 +51,7 @@ public class PlayerVoiceChat : NetworkBehaviour
         if (!isPushToTalkRecording && playerInputHandler.PushToTalkTriggered)
         {
             SteamUser.StartVoiceRecording();
+            ToggleSenderAudioFilters(true);
             Debug.Log("Start Recording");
             isPushToTalkRecording = true;
             StartRecording();
@@ -69,6 +76,7 @@ public class PlayerVoiceChat : NetworkBehaviour
         {
             //Debug.Log("min distance OK");
             isProximityChatRecording = true;
+            ToggleSenderAudioFilters(false);
             SteamUser.StartVoiceRecording();
         }
         else if (isProximityChatRecording && PlayerIDHelper.Instance.DistanceBetweenPlayer() >= distanceToRecordProximityChat)
@@ -133,12 +141,22 @@ public class PlayerVoiceChat : NetworkBehaviour
     [ObserversRpc]
     public void StartRecording()
     {
+        Debug.Log("Start record - play talkie sound");
         talkie.TalkieSFXAudioSource.Play();
     }
 
     [ObserversRpc]
     public void StopRecording()
     {
+        Debug.Log("Stop record - play talkie sound");
         talkie.TalkieSFXAudioSource.Play();
+    }
+
+    [ObserversRpc]
+    private void ToggleSenderAudioFilters(bool enable)
+    {
+        Debug.Log($"toggle audio filters to {enable}");
+        lowPassFilter.enabled = enable;
+        highPassFilter.enabled = enable;
     }
 }
