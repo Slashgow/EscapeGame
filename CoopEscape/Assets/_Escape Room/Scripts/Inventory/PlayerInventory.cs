@@ -57,6 +57,7 @@ public class PlayerInventory : NetworkBehaviour
             return;
 
         itemInHand = Instantiate(item, itemAttachPoint.position, itemAttachPoint.rotation, itemAttachPoint);
+        itemInHand.SetHoldStatuts(true);
         
         //itemInHand.transform.localRotation =Quaternion.Inverse(item.AttachPoint.localRotation);
         itemInHand.transform.localPosition = -item.AttachPoint.localPosition;
@@ -80,6 +81,7 @@ public class PlayerInventory : NetworkBehaviour
         if (itemInHand.ItemName != item.ItemName)
             return;
 
+        itemInHand.SetHoldStatuts(false);
         Destroy(itemInHand.gameObject);
         itemInHand = null;
 
