@@ -36,11 +36,11 @@ public class PlayerVoiceChat : NetworkBehaviour
 
         enabled = isOwner;
 
+        talkie = FindAnyObjectByType<Talkie>();
+
         if (isOwner)
         {
             localPlayerVoiceChat = this;
-
-            talkie = FindAnyObjectByType<Talkie>();
             talkie.RegisterEvent();
         }
             
