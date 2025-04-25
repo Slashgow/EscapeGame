@@ -3805,6 +3805,8 @@ MonoBehaviour:
   playerInputHandler: {fileID: 2384613676191721805}
   distanceToRecordProximityChat: 10
   playerAudioSource: {fileID: 8334346756808648373}
+  lowPassFilter: {fileID: 3033259734052538426}
+  highPassFilter: {fileID: 7012725208769902509}
 --- !u!82 &8334346756808648373
 AudioSource:
   m_ObjectHideFlags: 0
