@@ -8,7 +8,7 @@ public class Item : AInteractable
     [SerializeField] private Sprite itemPicture;
     [SerializeField] private Rigidbody rigidbody;
 
-    public bool IsHeld { get; set; }
+    private SyncVar<bool> isHeld = new(false);
 
     protected override void OnOwnerChanged(PlayerID? oldOwner, PlayerID? newOwner, bool asServer)
     {
@@ -28,7 +28,13 @@ public class Item : AInteractable
     {
         Pickup();
     }
-    public override bool CanInteract() => !IsHeld;
+
+    public void SetHoldStatuts(bool p_isHeld)
+    {
+        Debug.Log($"set hold status {itemName} to {p_isHeld}");
+        isHeld.value = p_isHeld;
+    }
+    public override bool CanInteract() => !isHeld;
 
     [ContextMenu("Test Pickup")]
     public void Pickup()

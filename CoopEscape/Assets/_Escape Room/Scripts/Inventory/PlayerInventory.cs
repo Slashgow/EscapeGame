@@ -51,12 +51,7 @@ public class PlayerInventory : NetworkBehaviour
         itemInHand.Use();
     }
 
-    [ObserversRpc]
-    public void SetHoldStatuts(bool p_isHeld)
-    {
-        Debug.Log($"set hold status {itemInHand.ItemName} to {p_isHeld}");
-        itemInHand.IsHeld = p_isHeld;
-    }
+   
 
     public void EquipItem(Item item)
     {
@@ -64,7 +59,7 @@ public class PlayerInventory : NetworkBehaviour
             return;
 
         itemInHand = Instantiate(item, itemAttachPoint.position, itemAttachPoint.rotation, itemAttachPoint);
-        SetHoldStatuts(true);
+        itemInHand.SetHoldStatuts(true);
         
         //itemInHand.transform.localRotation =Quaternion.Inverse(item.AttachPoint.localRotation);
         itemInHand.transform.localPosition = -item.AttachPoint.localPosition;
@@ -88,7 +83,7 @@ public class PlayerInventory : NetworkBehaviour
         if (itemInHand.ItemName != item.ItemName)
             return;
 
-        SetHoldStatuts(false);
+        itemInHand.SetHoldStatuts(false);
         Destroy(itemInHand.gameObject);
         itemInHand = null;
 
