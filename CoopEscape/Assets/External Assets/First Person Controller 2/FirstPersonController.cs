@@ -43,7 +43,7 @@ public class FirstPersonController : NetworkBehaviour
     {
         base.OnSpawned();
 
-        enabled = isOwner;
+        
 
         if(!isOwner)
             return;
@@ -59,6 +59,8 @@ public class FirstPersonController : NetworkBehaviour
         {
             enabled = false;
         }
+
+        enabled = isOwner;
 
         //if (!isOwner)
         //    Destroy(playerCamera.gameObject);

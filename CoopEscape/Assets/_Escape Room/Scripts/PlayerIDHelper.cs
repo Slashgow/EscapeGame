@@ -9,6 +9,8 @@ public class PlayerIDHelper : MonoSingleton<PlayerIDHelper>
     private PlayerID? otherPlayerID;
     private GameObject otherPlayerGameObject;
     private AudioSource otherPlayerAudioSource;
+    private AudioLowPassFilter otherPlayerLowPassFilter;
+    private AudioHighPassFilter otherPlayerHighPassFilter;
 
     private  List<PlayerReference> players = new List<PlayerReference>();
 
@@ -51,5 +53,23 @@ public class PlayerIDHelper : MonoSingleton<PlayerIDHelper>
             return otherPlayerAudioSource;
         }
         return otherPlayerAudioSource;
+    }
+    public AudioLowPassFilter GetOtherPlayerLowPassFilter(PlayerID? callerPlayerID)
+    {
+        if (otherPlayerLowPassFilter == null)
+        {
+            otherPlayerLowPassFilter = players.First(playerReference => playerReference.PlayerID != callerPlayerID).Player.GetComponent<AudioLowPassFilter>();
+            return otherPlayerLowPassFilter;
+        }
+        return otherPlayerLowPassFilter;
+    }
+    public AudioHighPassFilter GetOtherPlayerHighPassFilter(PlayerID? callerPlayerID)
+    {
+        if (otherPlayerHighPassFilter == null)
+        {
+            otherPlayerHighPassFilter = players.First(playerReference => playerReference.PlayerID != callerPlayerID).Player.GetComponent<AudioHighPassFilter>();
+            return otherPlayerHighPassFilter;
+        }
+        return otherPlayerHighPassFilter;
     }
 }

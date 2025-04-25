@@ -51,7 +51,7 @@ public class PlayerVoiceChat : NetworkBehaviour
         if (!isPushToTalkRecording && playerInputHandler.PushToTalkTriggered)
         {
             SteamUser.StartVoiceRecording();
-            ToggleSenderAudioFilters(true);
+            ToggleReceiverAudioFilters(PlayerIDHelper.Instance.GetOtherPlayerID(owner), true);
             Debug.Log("Start Recording");
             isPushToTalkRecording = true;
             StartRecording();
@@ -62,6 +62,7 @@ public class PlayerVoiceChat : NetworkBehaviour
             if(!isProximityChatRecording)
                 SteamUser.StopVoiceRecording();
             Debug.Log("Stop Recording");
+            ToggleReceiverAudioFilters(PlayerIDHelper.Instance.GetOtherPlayerID(owner), false);
             isPushToTalkRecording = false;
             StopRecording();
             OnEndPushToTalk?.Invoke();
@@ -82,6 +83,7 @@ public class PlayerVoiceChat : NetworkBehaviour
         else if (isProximityChatRecording && PlayerIDHelper.Instance.DistanceBetweenPlayer() >= distanceToRecordProximityChat)
         {
             isProximityChatRecording = false;
+            ToggleSenderAudioFilters(true);
             SteamUser.StopVoiceRecording();
         }
         else if (isProximityChatRecording)
@@ -158,5 +160,12 @@ public class PlayerVoiceChat : NetworkBehaviour
         Debug.Log($"toggle audio filters to {enable}");
         lowPassFilter.enabled = enable;
         highPassFilter.enabled = enable;
+    }
+
+    [ObserversRpc]
+    private void ToggleReceiverAudioFilters(PlayerID? playerID, bool enable)
+    {
+        PlayerIDHelper.Instance.GetOtherPlayerHighPassFilter(playerID).enabled = enable;
+        PlayerIDHelper.Instance.GetOtherPlayerLowPassFilter(playerID).enabled = enable;
     }
 }
