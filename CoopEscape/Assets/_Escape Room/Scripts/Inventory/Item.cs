@@ -8,7 +8,7 @@ public class Item : AInteractable
     [SerializeField] private Sprite itemPicture;
     [SerializeField] private Rigidbody rigidbody;
 
-    private SyncVar<bool> isHeld = new(false);
+    private SyncVar<bool> isHeld = new(false, ownerAuth: true);
 
     protected override void OnOwnerChanged(PlayerID? oldOwner, PlayerID? newOwner, bool asServer)
     {
