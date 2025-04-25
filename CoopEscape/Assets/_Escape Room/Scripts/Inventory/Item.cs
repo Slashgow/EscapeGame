@@ -14,6 +14,11 @@ public class Item : AInteractable
     {
         base.OnSpawned();
 
+        if (PlayerInventory.localInventory.IsHoldingItem(this))
+        {
+            SetHoldStatus(true);
+        }
+
         Debug.Log($"{itemName} spawned");
     }
 
@@ -25,7 +30,7 @@ public class Item : AInteractable
         {
             rigidbody.isKinematic = true;
             Debug.Log("holding item on owner changed");
-            SetHoldStatuts(true);
+            SetHoldStatus(true);
             return;
         }
         rigidbody.isKinematic = !isOwner;
@@ -39,7 +44,7 @@ public class Item : AInteractable
     }
 
     [ObserversRpc]
-    public void SetHoldStatuts(bool p_isHeld)
+    public void SetHoldStatus(bool p_isHeld)
     {
         Debug.Log($"set hold status {itemName} to {p_isHeld}");
         isHeld = p_isHeld;
@@ -55,7 +60,6 @@ public class Item : AInteractable
             return;
         }
 
-            
         inventoryManager.AddItem(this);
         Destroy(gameObject);
     }

@@ -98,7 +98,7 @@ public class PlayerVoiceChat : NetworkBehaviour
         //Debug.Log($"voice result : {voiceResult.ToString()}");  
         if (voiceResult == EVoiceResult.k_EVoiceResultOK && compressed > 1024)
         {
-            Debug.Log(compressed);
+            //Debug.Log(compressed);
             byte[] destBuffer = new byte[1024];
             voiceResult = SteamUser.GetVoice(true, destBuffer, 1024, out uint bytesWritten);
             if (voiceResult == EVoiceResult.k_EVoiceResultOK && bytesWritten > 0)
