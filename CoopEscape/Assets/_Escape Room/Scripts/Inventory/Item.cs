@@ -14,7 +14,7 @@ public class Item : AInteractable
     {
         base.OnSpawned();
 
-        if (PlayerInventory.localInventory.IsHoldingItem(this))
+        if (PlayerInventory.localInventory != null && PlayerInventory.localInventory.IsHoldingItem(this))
         {
             SetHoldStatus(true);
         }
