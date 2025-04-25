@@ -8,7 +8,7 @@ public class Item : AInteractable
     [SerializeField] private Sprite itemPicture;
     [SerializeField] private Rigidbody rigidbody;
 
-    private SyncVar<bool> isHeld = new(false, ownerAuth: true);
+    private bool isHeld;
 
     protected override void OnSpawned()
     {
@@ -24,6 +24,8 @@ public class Item : AInteractable
         if (PlayerInventory.localInventory.IsHoldingItem(this))
         {
             rigidbody.isKinematic = true;
+            Debug.Log("holding item on owner changed");
+            SetHoldStatuts(true);
             return;
         }
         rigidbody.isKinematic = !isOwner;
@@ -36,10 +38,11 @@ public class Item : AInteractable
         Pickup();
     }
 
+    [ObserversRpc]
     public void SetHoldStatuts(bool p_isHeld)
     {
         Debug.Log($"set hold status {itemName} to {p_isHeld}");
-        isHeld.value = p_isHeld;
+        isHeld = p_isHeld;
     }
     public override bool CanInteract() => !isHeld;
 
