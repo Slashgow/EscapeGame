@@ -33,7 +33,7 @@ public class Item : AInteractable
             SetHoldStatus(true);
             return;
         }
-        rigidbody.isKinematic = !isOwner;
+        rigidbody.isKinematic = false;
     }
     public string ItemName => itemName;
     public Sprite ItemPicture => itemPicture;

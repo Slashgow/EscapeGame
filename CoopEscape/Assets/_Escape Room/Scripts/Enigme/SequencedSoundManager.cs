@@ -6,10 +6,9 @@ using UnityEngine.Events;
 
 public class SequencedSoundManager : MonoBehaviour
 {
-    [SerializeField] private List<AudioClip> orderedAudioClips = new List<AudioClip>();
+    [SerializeField] private List<SoundOnButtonClick> orderedSoundOnButtonClicks = new List<SoundOnButtonClick>();
     [SerializeField] private AudioSource audioSource;
     [SerializeField, Range(0f, 3f)] private float timeBetweenToggle;
-    [SerializeField] private List<InteractableButton> orderedInteractableButtons = new List<InteractableButton>();
 
     public UnityEvent OnTriggerAllInGoodOrder;
 
@@ -19,19 +18,19 @@ public class SequencedSoundManager : MonoBehaviour
 
     private void Start()
     {
-        orderedInteractableButtons.ForEach(button => button.OnClickInteractable += OnClickInteractableButton);
+        orderedSoundOnButtonClicks.ForEach(orderedSoundOnButtonClick => orderedSoundOnButtonClick.InteractableButton.OnClickInteractable += OnClickInteractableButton);
     }
     private void OnDisable()
     {
-        orderedInteractableButtons.ForEach(button => button.OnClickInteractable -= OnClickInteractableButton);
+        orderedSoundOnButtonClicks.ForEach(orderedSoundOnButtonClick => orderedSoundOnButtonClick.InteractableButton.OnClickInteractable -= OnClickInteractableButton);
     }
 
     private void OnClickInteractableButton(InteractableButton interactableButton)
     {
-        if(interactableButton == orderedInteractableButtons[currentInteractableIndex])
+        if(interactableButton == orderedSoundOnButtonClicks[currentInteractableIndex].InteractableButton)
         {
             currentInteractableIndex++;
-            if (currentInteractableIndex >= orderedInteractableButtons.Count)
+            if (currentInteractableIndex >= orderedSoundOnButtonClicks.Count)
             {
                 OnTriggerAllInGoodOrder?.Invoke();
                 Debug.Log("On Complete sequenced sound");
@@ -60,9 +59,9 @@ public class SequencedSoundManager : MonoBehaviour
     {
         index = 0;
 
-        while (index < orderedAudioClips.Count)
+        while (index < orderedSoundOnButtonClicks.Count)
         {
-            audioSource.clip = orderedAudioClips[index];
+            audioSource.clip = orderedSoundOnButtonClicks[index].AudioClip;
             audioSource.Play();
             index++;
             yield return new WaitForSeconds(timeBetweenToggle + audioSource.clip.length);
