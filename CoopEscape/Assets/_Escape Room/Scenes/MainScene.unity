@@ -16638,6 +16638,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 396323902}
     m_Modifications:
+    - target: {fileID: 1204746027868999338, guid: 522ae8a3cca8bc64085c5743f2dca910, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1369567006643779403, guid: 522ae8a3cca8bc64085c5743f2dca910, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
