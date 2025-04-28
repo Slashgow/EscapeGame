@@ -76,6 +76,8 @@ public class InventoryManager : MonoBehaviour
         canvasGroup.blocksRaycasts = toggle;
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = toggle;
+
+        GameManager.Instance.IsInMenu = toggle;
     }
 
     public void ItemMoved(InventoryItem inventoryItem, InventorySlot newSlot)

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3145712632690027213}
   - component: {fileID: 4798864145475997457}
   - component: {fileID: 6431613600266507097}
-  - component: {fileID: 8877107421991143508}
+  - component: {fileID: 9028498051226782363}
   m_Layer: 6
   m_Name: Structure Salle
   m_TagString: Untagged
@@ -87,7 +87,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8877107421991143508
+--- !u!64 &9028498051226782363
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,4 +108,4 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -2358745648584919639, guid: 3206b1a2d5a51d34bb0995e7f597635a, type: 3}
+  m_Mesh: {fileID: -2358745648584919639, guid: a435cd10ede27f544889f48de6e505b1, type: 3}

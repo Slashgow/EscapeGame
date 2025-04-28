@@ -1,9 +1,13 @@
 using System.Collections.Generic;
+using DG.Tweening;
+using Newtonsoft.Json.Bson;
 using PurrNet;
 using UnityEngine;
 
 public class FirstPersonController : NetworkBehaviour
 {
+    public static FirstPersonController localFirstPersonController;
+
     [Header("Movement Speeds")]
     [SerializeField] private float walkSpeed = 3.0f;
     [SerializeField] private float sprintMultiplier = 2.0f;
@@ -46,10 +50,17 @@ public class FirstPersonController : NetworkBehaviour
         enabled = isOwner;
 
         if (!isOwner)
+        {
+            localFirstPersonController = null;
             return;
-
-        if(isOwner)
+        }
+        
+        if (isOwner)
+        {
             playerRenderers.ForEach(renderer => renderer.enabled = false);
+            localFirstPersonController = this;
+        }
+         
 
         playerCamera = Camera.main;
         playerCamera.transform.SetParent(transform);
@@ -74,6 +85,9 @@ public class FirstPersonController : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameManager.Instance.IsInMenu)
+            return;
+
         HandleMovement();
         HandleRotation();
     }
@@ -163,6 +177,16 @@ public class FirstPersonController : NetworkBehaviour
         characterController.enabled = true;
     }
 
+    public void MovePlayerTo(Transform targetTransform, float timeToMove, Ease easing)
+    {
+        characterController.enabled = false;
+        this.transform.DOMove(targetTransform.position, timeToMove).SetEase(easing).OnComplete(() => characterController.enabled = true);
+        this.transform.DORotateQuaternion(targetTransform.rotation, timeToMove).SetEase(easing);
+    }
+    public void MoveVerticalRotationTo(Quaternion endRotation, float timeToMove, Ease easing)
+    {
+        playerCamera.transform.DORotateQuaternion(endRotation, timeToMove).SetEase(easing);
+    }
     private void ApplyHorizontalRotation(float rotationAmount)
     {
         transform.Rotate(0, rotationAmount, 0);

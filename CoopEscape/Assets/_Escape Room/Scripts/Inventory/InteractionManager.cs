@@ -98,6 +98,8 @@ public abstract class AInteractable : NetworkBehaviour
     public virtual void Use() { }
     public virtual void HoldInteract() { }
     public abstract void Interact();
+    public virtual event Action OnInteract = delegate { };
+
     public event Action OnHoverStart = delegate { };
     public virtual void OnHover() 
     { 

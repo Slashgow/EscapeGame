@@ -5,10 +5,16 @@ public class TorcheTooltip : MonoBehaviour
     [SerializeField] private AInteractable staticTorche;
     [SerializeField] private Tooltip tooltip;
 
-    private void Start()
+    private void OnEnable()
     {
         staticTorche.OnHoverStart += StaticTorche_OnHoverStart;
         staticTorche.OnHoverStop += StaticTorche_OnHoverStop;
+    }
+
+    private void OnDisable()
+    {
+        staticTorche.OnHoverStart -= StaticTorche_OnHoverStart;
+        staticTorche.OnHoverStop -= StaticTorche_OnHoverStop;
     }
 
     private void StaticTorche_OnHoverStop()
