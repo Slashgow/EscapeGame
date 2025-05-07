@@ -43,6 +43,7 @@ public class FirstPersonController : NetworkBehaviour
     private readonly int JUMP = Animator.StringToHash("Jump");
     private bool isJumping;
 
+    public bool IsJumpLocked { get; set; } =false;
     protected override void OnSpawned()
     {
         base.OnSpawned();
@@ -51,7 +52,7 @@ public class FirstPersonController : NetworkBehaviour
 
         if (!isOwner)
         {
-            localFirstPersonController = null;
+            //localFirstPersonController = null;
             return;
         }
         
@@ -107,7 +108,7 @@ public class FirstPersonController : NetworkBehaviour
             {
                 animator.SetBool(JUMP, false);
                 isJumping = false;
-                Debug.Log("stop jumping");
+                //Debug.Log("stop jumping");
             }
             currentMovement.y = -0.5f;
 
@@ -115,7 +116,7 @@ public class FirstPersonController : NetworkBehaviour
             {
                 if (!isJumping)
                 {
-                    Debug.Log("start jumping");
+                    //Debug.Log("start jumping");
                     animator.SetBool(JUMP, true);
                     isJumping = true;
                 }
@@ -136,22 +137,25 @@ public class FirstPersonController : NetworkBehaviour
         currentMovement.z = worldDirection.z * CurrentSpeed;
 
         HandleAnimationState();
-
-        HandleJumping();
-        characterController.Move(currentMovement * Time.deltaTime);
+        
+        if(!IsJumpLocked)
+            HandleJumping();
+        
+        if(characterController.enabled)
+            characterController.Move(currentMovement * Time.deltaTime);
     }
 
     private void HandleAnimationState()
     {
         if (isWalking && playerInputHandler.MovementInput.x == 0 && playerInputHandler.MovementInput.y == 0)
         {
-            Debug.Log("stop walking");
+            //Debug.Log("stop walking");
             animator.SetBool(IS_WALKING, false);
             isWalking = false;
         }
         else if(!isWalking && (playerInputHandler.MovementInput.x > 0f || playerInputHandler.MovementInput.y > 0f))
         {
-            Debug.Log("start walking");
+            //Debug.Log("start walking");
             animator.SetBool(IS_WALKING, true);
             isWalking = true;
         }
@@ -206,4 +210,6 @@ public class FirstPersonController : NetworkBehaviour
         ApplyHorizontalRotation(mouseXRotation);
         ApplyVerticalRotation(mouseYRotation);
     }
+
+    public void ToggleCharacterController(bool enable) => characterController.enabled = enable;
 }

@@ -20,6 +20,7 @@ public class InteractableCursorZone : AInteractable
     {
         GameManager.Instance.IsInMenu = false;
         cursorUnlocker.HideCursor();
+        //this.gameObject.SetActive(false);
     }
 
     public override void Interact()

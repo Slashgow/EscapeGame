@@ -8,7 +8,7 @@ public class Item : AInteractable
     [SerializeField] private Sprite itemPicture;
     [SerializeField] private Rigidbody rigidbody;
 
-    private bool isHeld;
+    protected bool isHeld;
 
     protected override void OnSpawned()
     {
@@ -19,7 +19,7 @@ public class Item : AInteractable
             SetHoldStatus(true);
         }
 
-        Debug.Log($"{itemName} spawned");
+        //Debug.Log($"{itemName} spawned");
     }
 
     protected override void OnOwnerChanged(PlayerID? oldOwner, PlayerID? newOwner, bool asServer)
@@ -67,13 +67,13 @@ public class Item : AInteractable
     public override void OnHover()
     {
         base.OnHover();
-        Debug.Log("On Start Hover");
+        //Debug.Log("On Start Hover");
     }
 
     public override void OnStopHover()
     {
         base.OnStopHover();
-        Debug.Log("On stop Hover");
+        //Debug.Log("On stop Hover");
     }
 
     internal void SetKinematic(bool toggle)

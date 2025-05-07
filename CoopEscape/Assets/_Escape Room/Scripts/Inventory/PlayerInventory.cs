@@ -91,6 +91,24 @@ public class PlayerInventory : NetworkBehaviour
         Debug.Log($"unequip item {item.ItemName} ");
     }
 
+    public void UnequipedItemWithoutDestroy(Item item)
+    {
+        if (!item)
+            return;
+
+        if (!itemInHand)
+            return;
+
+        if (itemInHand.ItemName != item.ItemName)
+            return;
+
+        itemInHand.SetHoldStatus(false);
+        itemInHand = null;
+
+        UpdateRigWeight(1f, 0f);
+        Debug.Log($"unequip item without destroy {item.ItemName} ");
+    }
+
 
     public bool IsHoldingItem(Item item)
     {

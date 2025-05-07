@@ -18,7 +18,7 @@ public class LockNumber : Pin
     protected override void OnSpawned()
     {
         base.OnSpawned();
-        Debug.Log("Register event ");
+        //Debug.Log("Register event ");
         previousNumberButton.onClick.AddListener(UpdateToPreviousNumber);
         nextNumberButton.onClick.AddListener(UpdateToNextNumber);
 
@@ -36,7 +36,7 @@ public class LockNumber : Pin
     [ObserversRpc]
     private void UpdateToNextNumber()
     {
-        Debug.Log("update to next number observer");
+        //Debug.Log("update to next number observer");
         currentDigitIndex++;
         CurrentNumber = digits[MathsUtility.Modulo(currentDigitIndex, digits.Length)];
         numberText.text = CurrentNumber.ToString();
@@ -45,7 +45,7 @@ public class LockNumber : Pin
     [ObserversRpc]
     private void UpdateToPreviousNumber()
     {
-        Debug.Log("update to previous number observer");
+        //Debug.Log("update to previous number observer");
         currentDigitIndex--;
         CurrentNumber = digits[MathsUtility.Modulo(currentDigitIndex, digits.Length)];
         numberText.text = CurrentNumber.ToString();

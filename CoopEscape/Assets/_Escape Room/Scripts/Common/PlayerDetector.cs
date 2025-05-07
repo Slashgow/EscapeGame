@@ -1,3 +1,5 @@
+
+using System.Collections.Generic;
 using PurrNet;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,17 +16,28 @@ public class PlayerDetector : MonoBehaviour
 
     public UnityEvent OnLastPlayerExit;
 
+    private List<PlayerID?> playerIDs = new List<PlayerID?>();
+
+    private List<FirstPersonController> firstPersonControllers = new List<FirstPersonController>();
+    public List<FirstPersonController> FirstPersonControllers => firstPersonControllers;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Player player))
         {
-            PlayerCount++;
+            if (!playerIDs.Contains(player.PlayerID))
+            {
+                playerIDs.Add(player.PlayerID);
+                firstPersonControllers.Add(player.GetComponent<FirstPersonController>());
+                PlayerCount++;
+            }
+
             AnyPlayerEnter();
 
             if(player != Player.localPlayerInstance)
                 return;
 
-            Debug.Log($"on player enter {this.name} || {player.localPlayer}");
+            //Debug.Log($"on player enter {this.name} || {player.localPlayer}");
             OnPlayerEnter?.Invoke(player.transform);
         }
     }
@@ -33,7 +46,13 @@ public class PlayerDetector : MonoBehaviour
     {
         if (other.TryGetComponent(out Player player))
         {
-            PlayerCount--;
+            if (playerIDs.Contains(player.PlayerID))
+            {
+                playerIDs.Remove(player.PlayerID);
+                firstPersonControllers.Remove(player.GetComponent<FirstPersonController>());
+                PlayerCount--;
+            }
+           
 
             if (PlayerCount <= 0)
                 OnLastPlayerExit?.Invoke();
@@ -43,7 +62,7 @@ public class PlayerDetector : MonoBehaviour
             if (player != Player.localPlayerInstance)
                 return;
 
-            Debug.Log($"on player exit {this.name} || {player.localPlayer}");
+            //Debug.Log($"on player exit {this.name} || {player.localPlayer}");
             OnPlayerExit?.Invoke(player.transform);
         }
     }

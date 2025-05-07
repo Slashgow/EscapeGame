@@ -24,6 +24,7 @@ public class Player : NetworkBehaviour
     public static Player localPlayerInstance;
 
     private PlayerReference playerReference;
+    public PlayerID? PlayerID => playerReference.PlayerID;
     protected override void OnSpawned()
     {
         base.OnSpawned();

@@ -3741,7 +3741,7 @@ CharacterController:
   m_Radius: 0.29
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.0003
+  m_SkinWidth: 0.03
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.5, z: 0.16}
 --- !u!114 &4859315096397973224
@@ -4010,7 +4010,7 @@ MonoBehaviour:
   _syncRotation: 1
   _syncScale: 1
   _syncParent: 1
-  _interpolateSettings: 7
+  _interpolateSettings: 255
   _minBufferSize: 1
   _maxBufferSize: 2
   _characterControllerPatch: 0

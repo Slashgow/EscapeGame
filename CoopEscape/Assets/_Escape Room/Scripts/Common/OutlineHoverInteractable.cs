@@ -13,7 +13,7 @@ public class OutlineHoverInteractable : MonoBehaviour
         outline = GetComponent<Outline>();
         //interactable = GetComponent<AInteractable>();
        
-        Debug.Log($"subscribe to event outline {interactable.name}");
+        //Debug.Log($"subscribe to event outline {interactable.name}");
         interactable.OnHoverStart += Interactable_OnHoverStart;
         interactable.OnHoverStop += Interactable_OnHoverStop; 
         outline.enabled = false;
@@ -24,20 +24,20 @@ public class OutlineHoverInteractable : MonoBehaviour
         if(interactable == null)
             return;
 
-        Debug.Log($"unsubscribe to event outline {interactable.name}");
+        //Debug.Log($"unsubscribe to event outline {interactable.name}");
         interactable.OnHoverStart -= Interactable_OnHoverStart;
         interactable.OnHoverStop -= Interactable_OnHoverStop;
     }
 
     private void Interactable_OnHoverStop()
     {
-        Debug.Log($"hover stop, disable outline {interactable.name}");
+        //Debug.Log($"hover stop, disable outline {interactable.name}");
         outline.enabled = false;
     }
 
     private void Interactable_OnHoverStart()
     {
-        Debug.Log($"hover start, enable outline {interactable.name}");
+        //Debug.Log($"hover start, enable outline {interactable.name}");
         outline.enabled = true;
     }
 }

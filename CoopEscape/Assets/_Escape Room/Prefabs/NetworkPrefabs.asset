@@ -56,3 +56,12 @@ MonoBehaviour:
   - prefab: {fileID: 1849294747898504948, guid: f5820b61fd7b7c4469e00027c55c118f, type: 3}
     pooled: 0
     warmupCount: 5
+  - prefab: {fileID: 1164782976553570446, guid: b57d0eb048ea61b4fb3cf93f90ea9316, type: 3}
+    pooled: 0
+    warmupCount: 5
+  - prefab: {fileID: 5914817501872067867, guid: ef02cb238663d24469ff3a80e49a8503, type: 3}
+    pooled: 0
+    warmupCount: 5
+  - prefab: {fileID: 3828213895929653954, guid: fcb2672ddab1f254ab74be0e301342cd, type: 3}
+    pooled: 0
+    warmupCount: 5

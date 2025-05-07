@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using PurrNet;
 using PurrNet.Utils;
 using UnityEngine;
@@ -131,6 +132,7 @@ public class InventoryManager : MonoBehaviour
 
     private void AddNewItem(Item item)
     {
+        Debug.Log($"add item {item}");
         for (int i = 0; i < slots.Count; i++)
         {
             InventorySlot slot = slots[i];
@@ -153,7 +155,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    internal void DropItem(InventoryItem inventoryItem)
+    public void DropItem(InventoryItem inventoryItem)
     {
         for (int i = 0; i < inventoryData.Length; i++)
         {
@@ -177,11 +179,44 @@ public class InventoryManager : MonoBehaviour
 
             if(DeductItem(inventoryItem) <=0)
                 PlayerInventory.localInventory.UnequipedItem(itemToSpawn);
-            break;
+        }
+    }
+
+    public void DropItemWithoutDestroy(InventoryItem inventoryItem)
+    {
+        for (int i = 0; i < inventoryData.Length; i++)
+        {
+            var data = inventoryData[i];
+
+            if (data.inventoryItem != inventoryItem)
+                continue;
+
+            var itemToSpawn = GetItemByName(data.itemName);
+            if (itemToSpawn == null)
+            {
+                Debug.LogError($"item to spawn with name {data.itemName}", this);
+                return;
+            }
+
+            PlayerInventory.localInventory.UnequipedItemWithoutDestroy(itemToSpawn);
+
+            if (DeductItem(inventoryItem) <= 0)
+                PlayerInventory.localInventory.UnequipedItemWithoutDestroy(itemToSpawn);
         }
     }
 
     private Item GetItemByName(string itemName) => allItems.Find(x => x.ItemName == itemName);
+
+    public InventoryItem GetInventoryItemByName(string itemName)
+    {
+        for(int i = 0; i < inventoryData.Length; i++)
+        {
+            if(inventoryData[i].itemName == itemName)
+                return inventoryData[i].inventoryItem;
+        }
+        return null;
+    }
+
     private Item GetItemByActionSlot(ActionSlot actionSlot)
     {
         InventorySlot inventorySlot = actionSlot.GetComponent<InventorySlot>();
@@ -206,6 +241,7 @@ public class InventoryManager : MonoBehaviour
             data.amount--;
             if(data.amount <= 0)
             {
+                Debug.Log("destroy inventory item");
                 inventoryData[i] = default;
                 slots[i].SetItem(null);
                 Destroy(inventoryItem.gameObject);
