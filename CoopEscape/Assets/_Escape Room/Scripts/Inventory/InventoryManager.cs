@@ -13,10 +13,12 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private InventoryItem itemPrefab;
     [SerializeField] private List<InventorySlot> slots = new List<InventorySlot>();
     [SerializeField] private List<ActionSlot> actionSlots = new List<ActionSlot>();
+    [SerializeField, Range(0f, 1f)] private float timeScroll = 0.2f;
 
     [PurrReadOnly, SerializeField] private InventoryItemData[] inventoryData;
     private ActionSlot activeActionSlot;
 
+    private float timeElapsedScroll;
     private void Awake()
     {
         InstanceHandler.RegisterInstance(this);
@@ -38,11 +40,23 @@ public class InventoryManager : MonoBehaviour
             ToggleInventory(!isOpen);
         }
 
+        //Debug.Log($"scroll value : {inventoryInputHandler.ScrollValue.y}");
+        timeElapsedScroll += Time.deltaTime;
+        
+        if (timeElapsedScroll <= timeScroll)
+            return;
+
         if (inventoryInputHandler.ScrollValue.y >= 1f)
+        {
+            timeElapsedScroll = 0f;
             ActiveNextActionSlot();
+        }
+            
         else if (inventoryInputHandler.ScrollValue.y <= -1f)
+        {
+            timeElapsedScroll = 0f;
             ActivePreviousActionSlot();
-       
+        }
     }
 
     private void ActivePreviousActionSlot()

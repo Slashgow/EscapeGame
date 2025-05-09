@@ -58,6 +58,12 @@ public class PlayerInventory : NetworkBehaviour
         if (!item)
             return;
 
+        if (item == itemInHand)
+            return;
+
+        if(itemInHand != null && item.ItemName == itemInHand.ItemName)
+            return;
+
         itemInHand = Instantiate(item, itemAttachPoint.position, itemAttachPoint.rotation, itemAttachPoint);
         itemInHand.SetHoldStatus(true);
         
@@ -83,7 +89,7 @@ public class PlayerInventory : NetworkBehaviour
         if (itemInHand.ItemName != item.ItemName)
             return;
 
-        itemInHand.SetHoldStatus(false);
+        //itemInHand.SetHoldStatus(false);
         Destroy(itemInHand.gameObject);
         itemInHand = null;
 
