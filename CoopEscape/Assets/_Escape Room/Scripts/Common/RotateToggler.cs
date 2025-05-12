@@ -26,6 +26,7 @@ public class RotateToggler : MonoBehaviour
     public void SwitchRotationPosition()
     {
         float angle = isInDefaultPosition ? endAngle : startAngle;
+        Debug.Log(angle);
 
         Debug.Log("switch rotation");
         if(rotationAxis == Axis.X)

@@ -1746,6 +1746,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1348903808}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1835967249}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 24643389}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnStopUnlockUnityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -13191,7 +13227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3176680379306695748, guid: 522ae8a3cca8bc64085c5743f2dca910, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 123
       objectReference: {fileID: 0}
     - target: {fileID: 3229519782385573269, guid: 522ae8a3cca8bc64085c5743f2dca910, type: 3}
       propertyPath: m_Enabled
@@ -13307,7 +13343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5576065360474696990, guid: 522ae8a3cca8bc64085c5743f2dca910, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 123
       objectReference: {fileID: 0}
     - target: {fileID: 6094018293136233412, guid: 522ae8a3cca8bc64085c5743f2dca910, type: 3}
       propertyPath: m_IsActive
@@ -13379,7 +13415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7710861474631958902, guid: 522ae8a3cca8bc64085c5743f2dca910, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 123
       objectReference: {fileID: 0}
     - target: {fileID: 7981460369216589343, guid: 522ae8a3cca8bc64085c5743f2dca910, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15769,7 +15805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 529254641365375531, guid: 1d6592c229e501e43afd7d027d5621ab, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 123
       objectReference: {fileID: 0}
     - target: {fileID: 7553858638366101979, guid: 1d6592c229e501e43afd7d027d5621ab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23578,7 +23614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5621598551787670806, guid: be020a375b977c143a462b29ecdbd3bb, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 123
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27154,7 +27190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8956352339813230221, guid: 1e1e91e97c593d246a46f0a1b8fddf0a, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 123
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28243,7 +28279,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
       - m_Target: {fileID: 1835967249}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -28255,7 +28291,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
       - m_Target: {fileID: 1816846964}
         m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
         m_MethodName: set_enabled
@@ -28279,7 +28315,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!1001 &1820488187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35405,7 +35441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5576065360474696990, guid: 522ae8a3cca8bc64085c5743f2dca910, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 123
       objectReference: {fileID: 0}
     - target: {fileID: 6094018293136233412, guid: 522ae8a3cca8bc64085c5743f2dca910, type: 3}
       propertyPath: m_Layer
@@ -35413,7 +35449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6094018293136233412, guid: 522ae8a3cca8bc64085c5743f2dca910, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 123
       objectReference: {fileID: 0}
     - target: {fileID: 6117978141010337021, guid: 522ae8a3cca8bc64085c5743f2dca910, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -35819,7 +35855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8719878336770403344, guid: c4c8bf52005be7e42849efa850413d74, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 204.319
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8719878336770403344, guid: c4c8bf52005be7e42849efa850413d74, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -39309,6 +39345,10 @@ PrefabInstance:
     - target: {fileID: 5340212582660758823, guid: e5012731db3b8294d975519bf14dfd42, type: 3}
       propertyPath: m_Name
       value: Torche
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340212582660758823, guid: e5012731db3b8294d975519bf14dfd42, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
