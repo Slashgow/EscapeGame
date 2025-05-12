@@ -63,6 +63,7 @@ public class PinColor : Pin
     {
         var colors = chooseColorButton.colors;
         colors.normalColor = color;
+        colors.highlightedColor = color;
         chooseColorButton.colors = colors;
     }
 

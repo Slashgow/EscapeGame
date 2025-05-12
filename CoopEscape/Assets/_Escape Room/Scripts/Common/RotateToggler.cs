@@ -11,6 +11,7 @@ public class RotateToggler : MonoBehaviour
     [SerializeField, Range(-360f, 360f)] private float startAngle;
     [SerializeField, Range(-360f, 360f)] private float endAngle;
 
+    private bool isInDefaultPosition = true;
     private Tween rotateTween;
     private void Awake()
     {
@@ -24,14 +25,17 @@ public class RotateToggler : MonoBehaviour
 
     public void SwitchRotationPosition()
     {
+        float angle = isInDefaultPosition ? endAngle : startAngle;
+
         Debug.Log("switch rotation");
         if(rotationAxis == Axis.X)
         {
-            Debug.Log("switch rotation x");
-            Debug.Log(this.transform.localEulerAngles.x);
-            Debug.Log(Mathf.Abs(this.transform.localEulerAngles.x - startAngle));
-            float angle = Mathf.Abs(this.transform.localEulerAngles.x - startAngle) <= 0.1f ? endAngle : startAngle;
-                Debug.Log(angle);
+            //Debug.Log("switch rotation x");
+            //Debug.Log(this.transform.localEulerAngles.x);
+            //Debug.Log(Mathf.Abs(this.transform.localEulerAngles.x - startAngle));
+            //float angle = Mathf.Abs(this.transform.localEulerAngles.x - startAngle) <= 0.1f ? endAngle : startAngle;
+          
+                //Debug.Log(angle);
             if(rotateTween != null)
                 rotateTween.Kill();
             
@@ -39,8 +43,8 @@ public class RotateToggler : MonoBehaviour
         }
         else if (rotationAxis == Axis.Y)
         {
-            float angle = Mathf.Abs(this.transform.localEulerAngles.y - startAngle) <= 0.1f ? endAngle : startAngle;
-
+            //float angle = Mathf.Abs(this.transform.localEulerAngles.y - startAngle) <= 0.1f ? endAngle : startAngle;
+            
             if (rotateTween != null)
                 rotateTween.Kill();
 
@@ -49,13 +53,15 @@ public class RotateToggler : MonoBehaviour
             
         else if (rotationAxis == Axis.Z)
         {
-            float angle = Mathf.Abs(this.transform.localEulerAngles.z - startAngle) <= 0.1f ? endAngle : startAngle;
+            //float angle = Mathf.Abs(this.transform.localEulerAngles.z - startAngle) <= 0.1f ? endAngle : startAngle;
 
             if (rotateTween != null)
                 rotateTween.Kill();
 
             rotateTween = this.transform.DOLocalRotate( new Vector3(this.transform.localEulerAngles.x, this.transform.localEulerAngles.y, angle), timeToSwitch);
         }
+
+        isInDefaultPosition = !isInDefaultPosition;
     }
 
    

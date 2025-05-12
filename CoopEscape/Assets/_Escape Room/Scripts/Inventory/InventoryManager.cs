@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
+    [SerializeField] private List<Item> startupItems;
     [SerializeField] private List<Item> allItems = new List<Item>();
     [SerializeField] private SceneInputHandler inventoryInputHandler;
     [SerializeField] private CanvasGroup canvasGroup;
@@ -25,6 +26,8 @@ public class InventoryManager : MonoBehaviour
         inventoryData = new InventoryItemData[slots.Count];
         ToggleInventory(false);
         //SetActionSlotActive(actionSlots[0]);
+
+        startupItems.ForEach(item => AddItem(item));
     }
     private void OnDestroy()
     {
@@ -46,13 +49,13 @@ public class InventoryManager : MonoBehaviour
         if (timeElapsedScroll <= timeScroll)
             return;
 
-        if (inventoryInputHandler.ScrollValue.y >= 1f)
+        if (inventoryInputHandler.ScrollValue.y <= -1f)
         {
             timeElapsedScroll = 0f;
             ActiveNextActionSlot();
         }
             
-        else if (inventoryInputHandler.ScrollValue.y <= -1f)
+        else if (inventoryInputHandler.ScrollValue.y >= 1f)
         {
             timeElapsedScroll = 0f;
             ActivePreviousActionSlot();

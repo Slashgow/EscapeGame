@@ -33,7 +33,8 @@ public class Translator : MonoBehaviour
             if (translationTween != null)
                 translationTween.Kill();
 
-            translationTween = this.transform.DOLocalMove(new Vector3(stopAxisPosition, this.transform.localPosition.y, this.transform.localPosition.z), this.transform.localPosition.x * translationDuration / startAxisPosition)
+            translationTween = this.transform.DOLocalMove(new Vector3(stopAxisPosition, this.transform.localPosition.y, this.transform.localPosition.z),
+                (Mathf.Abs(stopAxisPosition - this.transform.localPosition.x) * translationDuration) / Mathf.Abs(stopAxisPosition - startAxisPosition))
                 .OnComplete(() => OnEndTranslation?.Invoke());
         }
         else if (translationAxis == Axis.Y)
@@ -41,7 +42,8 @@ public class Translator : MonoBehaviour
             if (translationTween != null)
                 translationTween.Kill();
 
-            translationTween = this.transform.DOLocalMove(new Vector3(this.transform.localPosition.x, stopAxisPosition, this.transform.localPosition.z), (this.transform.localPosition.y * translationDuration) / startAxisPosition)
+            translationTween = this.transform.DOLocalMove(new Vector3(this.transform.localPosition.x, stopAxisPosition, this.transform.localPosition.z), 
+                (Mathf.Abs(stopAxisPosition - this.transform.localPosition.y) * translationDuration) / Mathf.Abs(stopAxisPosition - startAxisPosition))
                 .OnComplete(() => OnEndTranslation?.Invoke()); ;
         }
 
@@ -50,7 +52,8 @@ public class Translator : MonoBehaviour
             if (translationTween != null)
                 translationTween.Kill();
 
-            translationTween = this.transform.DOLocalMove(new Vector3(this.transform.localPosition.x, this.transform.localPosition.y, stopAxisPosition), this.transform.localPosition.z * translationDuration / startAxisPosition)
+            translationTween = this.transform.DOLocalMove(new Vector3(this.transform.localPosition.x, this.transform.localPosition.y, stopAxisPosition),
+                (Mathf.Abs(stopAxisPosition - this.transform.localPosition.z) * translationDuration) / Mathf.Abs(stopAxisPosition - startAxisPosition))
                 .OnComplete(() => OnEndTranslation?.Invoke()); ;
         }
     }
@@ -62,7 +65,8 @@ public class Translator : MonoBehaviour
             if (translationTween != null)
                 translationTween.Kill();
 
-            translationTween = this.transform.DOLocalMove(new Vector3(startAxisPosition, this.transform.localPosition.y, this.transform.localPosition.z), this.transform.localPosition.x * translationDuration / stopAxisPosition)
+            translationTween = this.transform.DOLocalMove(new Vector3(startAxisPosition, this.transform.localPosition.y, this.transform.localPosition.z),
+                (Mathf.Abs(startAxisPosition - this.transform.localPosition.x) * translationDuration) / Mathf.Abs(stopAxisPosition - startAxisPosition))
                 .OnComplete(() => OnEndTranslation?.Invoke());
         }
         else if (translationAxis == Axis.Y)
@@ -70,7 +74,8 @@ public class Translator : MonoBehaviour
             if (translationTween != null)
                 translationTween.Kill();
 
-            translationTween = this.transform.DOLocalMove(new Vector3(this.transform.localPosition.x, startAxisPosition, this.transform.localPosition.z), (this.transform.localPosition.y * translationDuration) / stopAxisPosition)
+            translationTween = this.transform.DOLocalMove(new Vector3(this.transform.localPosition.x, startAxisPosition, this.transform.localPosition.z),
+                (Mathf.Abs(startAxisPosition - this.transform.localPosition.y) * translationDuration) / Mathf.Abs(stopAxisPosition - startAxisPosition))
                 .OnComplete(() => OnEndTranslation?.Invoke()); ;
         }
 
@@ -79,7 +84,8 @@ public class Translator : MonoBehaviour
             if (translationTween != null)
                 translationTween.Kill();
 
-            translationTween = this.transform.DOLocalMove(new Vector3(this.transform.localPosition.x, this.transform.localPosition.y, startAxisPosition), this.transform.localPosition.z * translationDuration / stopAxisPosition)
+            translationTween = this.transform.DOLocalMove(new Vector3(this.transform.localPosition.x, this.transform.localPosition.y, startAxisPosition),
+                (Mathf.Abs(startAxisPosition - this.transform.localPosition.z) * translationDuration) / Mathf.Abs(stopAxisPosition - startAxisPosition))
                 .OnComplete(() => OnEndTranslation?.Invoke()); ;
         }
     }

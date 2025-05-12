@@ -13,6 +13,7 @@ public class InteractableButton : AInteractable
 {
     [SerializeField] private ButtonInteraction buttonInteraction;
     [SerializeField] private bool triggerClickOnlyOnce;
+    [SerializeField, Range(0f,2f)] private float cooldownButton = 0.3f;
 
     [SerializeField] private bool isDebugHold;
 
@@ -23,15 +24,17 @@ public class InteractableButton : AInteractable
 
     public bool IsPushed => isPushed;
     private bool isPushed;
+    private float timeElapsed = 0.0f;
 
     [ObserversRpc]
     public override void Interact()
     {
-        if(buttonInteraction == ButtonInteraction.Click && !isPushed)
+        if(buttonInteraction == ButtonInteraction.Click && !isPushed && timeElapsed >= cooldownButton)
         {
             if(triggerClickOnlyOnce)
                 isPushed = true;
 
+            timeElapsed = 0.0f;
             OnClick?.Invoke();
             OnClickInteractable?.Invoke(this);
         }
@@ -60,24 +63,29 @@ public class InteractableButton : AInteractable
 
         if (!isPushed )
             return;
-        
+
         isPushed = false;
         StopHolding();
     }
 
     private void Update()
     {
+        if(timeElapsed < cooldownButton)
+            timeElapsed += Time.deltaTime;
+
         if(buttonInteraction != ButtonInteraction.Hold || isDebugHold)
             return;
 
-        if(IsHovering && isPushed && !SceneInputHandler.Instance.IsClickCurrentlyPressed)
+        if(IsHovering && isPushed && !SceneInputHandler.Instance.IsClickCurrentlyPressed && timeElapsed>= cooldownButton)
         {
+            timeElapsed = 0.0f;
             isPushed = false;
             StopHolding();
         }
 
-        else if(IsHovering && SceneInputHandler.Instance.IsClickCurrentlyPressed && !isPushed)
+        else if(IsHovering && SceneInputHandler.Instance.IsClickCurrentlyPressed && !isPushed && timeElapsed >= cooldownButton)
         {
+            timeElapsed = 0.0f;
             isPushed = true;
             StartHolding();
         }
