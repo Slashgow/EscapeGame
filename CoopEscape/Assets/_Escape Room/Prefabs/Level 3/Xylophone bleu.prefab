@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8758084293624064484}
   - component: {fileID: 7230012377705398778}
   - component: {fileID: 2940866568137080504}
-  - component: {fileID: 6377993126384886699}
+  - component: {fileID: 8821453802437147353}
   m_Layer: 0
   m_Name: Xylophone bleu
   m_TagString: Untagged
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8956352339813230221}
-  m_Mesh: {fileID: -7806197466344311230, guid: a435cd10ede27f544889f48de6e505b1, type: 3}
+  m_Mesh: {fileID: -8966066520460312795, guid: 40f8f9f06ff8a4945a230e5c5f7909cf, type: 3}
 --- !u!23 &2940866568137080504
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -87,7 +87,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6377993126384886699
+--- !u!65 &8821453802437147353
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,5 +106,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.46271515, y: 0.027515411, z: 0.9598267}
-  m_Center: {x: 0.0016098022, y: -0.011499405, z: 0.0013263226}
+  m_Size: {x: 0.46271515, y: 0.9598267, z: 0.027515411}
+  m_Center: {x: 0.0016098022, y: -0.0013263226, z: -0.011499405}

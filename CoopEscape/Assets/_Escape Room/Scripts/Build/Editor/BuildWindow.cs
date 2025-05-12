@@ -97,7 +97,7 @@ public class BuildWindow : EditorWindow
         }
         if (GUILayout.Button("-", GUILayout.Width(30), GUILayout.Height(30)))
         {
-            patch++;
+            patch--;
             patchString = patch.ToString();
             UpdateVersion($"{major}.{minor}.{patch}");
         }
