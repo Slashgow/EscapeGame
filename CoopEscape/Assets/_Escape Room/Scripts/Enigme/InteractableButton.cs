@@ -49,7 +49,8 @@ public class InteractableButton : AInteractable
             else 
             {
                 isPushed = true;
-                StartHolding();
+                Debug.Log("start holding debug");
+                StartHoldingLocal();
             }
         }
     }
@@ -76,7 +77,7 @@ public class InteractableButton : AInteractable
         if(buttonInteraction != ButtonInteraction.Hold || isDebugHold)
             return;
 
-        if(IsHovering && isPushed && !SceneInputHandler.Instance.IsClickCurrentlyPressed && timeElapsed>= cooldownButton)
+        else if(IsHovering && isPushed && !SceneInputHandler.Instance.IsClickCurrentlyPressed && timeElapsed>= cooldownButton)
         {
             timeElapsed = 0.0f;
             isPushed = false;
@@ -87,12 +88,20 @@ public class InteractableButton : AInteractable
         {
             timeElapsed = 0.0f;
             isPushed = true;
+            Debug.Log("start holding cd");
             StartHolding();
         }
     }
 
     [ObserversRpc]
     private void StartHolding()
+    {
+        isPushed = true;
+        OnHoldButton?.Invoke();
+        Debug.Log("button is pressed");
+    }
+
+    private void StartHoldingLocal()
     {
         isPushed = true;
         OnHoldButton?.Invoke();

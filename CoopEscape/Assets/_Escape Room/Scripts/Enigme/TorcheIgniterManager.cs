@@ -70,6 +70,7 @@ public class TorcheIgniterManager : MonoBehaviour
         orderedColorIndicators.ForEach(colorIndicator => SwitchColorIndicatorMaterial(colorIndicator, defaultColorIndicatorMaterial));
         currentIgnitableIndex = 0;
         currentColorIndex = 0;
+        CommonUtility.ShuffleTogether(orderedIgnitables, orderedClockIndicators);
         UpdateNeedleRotation(currentColorIndex);
     }
 
