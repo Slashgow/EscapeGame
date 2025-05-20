@@ -175,6 +175,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 222619210662043584, guid: c2cfdeca294ceff49b6a59cbb22e8839, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 222619210662043584, guid: c2cfdeca294ceff49b6a59cbb22e8839, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 222619210662043584, guid: c2cfdeca294ceff49b6a59cbb22e8839, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 222619210662043584, guid: c2cfdeca294ceff49b6a59cbb22e8839, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 606508681264712480, guid: c2cfdeca294ceff49b6a59cbb22e8839, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -456,6 +472,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2694710870039082532, guid: c2cfdeca294ceff49b6a59cbb22e8839, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918754354068068593, guid: c2cfdeca294ceff49b6a59cbb22e8839, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918754354068068593, guid: c2cfdeca294ceff49b6a59cbb22e8839, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918754354068068593, guid: c2cfdeca294ceff49b6a59cbb22e8839, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918754354068068593, guid: c2cfdeca294ceff49b6a59cbb22e8839, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -1389,6 +1421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 102885997}
   - component: {fileID: 102885996}
+  - component: {fileID: 102885998}
   m_Layer: 0
   m_Name: Persistent Manager
   m_TagString: Untagged
@@ -1427,6 +1460,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &102885998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102885995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3296c5233e45a7f4e84e0bb9a02c8cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holdToTalk: 0
 --- !u!1 &188598336
 GameObject:
   m_ObjectHideFlags: 0

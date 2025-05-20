@@ -27,6 +27,8 @@ public class PlayerIDHelper : MonoSingleton<PlayerIDHelper>
 
     public PlayerID? GetOtherPlayerID(PlayerID? callerPlayerID)
     {
+        if(players.Count < 2) return callerPlayerID;
+
         if(otherPlayerID == null)
         {
             otherPlayerID = players.First(playerReference => playerReference.PlayerID != callerPlayerID).PlayerID;
@@ -37,6 +39,8 @@ public class PlayerIDHelper : MonoSingleton<PlayerIDHelper>
     }
     public GameObject GetOtherPlayerGameObject(PlayerID? callerPlayerID)
     {
+        if(players.Count < 2) return players[0].Player;
+
         if(otherPlayerAudioSource == null)
         {
             otherPlayerGameObject = players.First(playerReference => playerReference.PlayerID != callerPlayerID).Player;
@@ -47,6 +51,8 @@ public class PlayerIDHelper : MonoSingleton<PlayerIDHelper>
 
     public AudioSource GetOtherPlayerAudioSource(PlayerID? callerPlayerID)
     {
+        if (players.Count < 2) return players[0].Player.GetComponent<AudioSource>();
+
         if (otherPlayerAudioSource == null)
         {
             otherPlayerAudioSource = players.First(playerReference => playerReference.PlayerID != callerPlayerID).Player.GetComponent<AudioSource>();
@@ -56,6 +62,8 @@ public class PlayerIDHelper : MonoSingleton<PlayerIDHelper>
     }
     public AudioLowPassFilter GetOtherPlayerLowPassFilter(PlayerID? callerPlayerID)
     {
+        if (players.Count < 2) return players[0].Player.GetComponent<AudioLowPassFilter>();
+
         if (otherPlayerLowPassFilter == null)
         {
             otherPlayerLowPassFilter = players.First(playerReference => playerReference.PlayerID != callerPlayerID).Player.GetComponent<AudioLowPassFilter>();
@@ -65,6 +73,8 @@ public class PlayerIDHelper : MonoSingleton<PlayerIDHelper>
     }
     public AudioHighPassFilter GetOtherPlayerHighPassFilter(PlayerID? callerPlayerID)
     {
+        if (players.Count < 2) return players[0].Player.GetComponent<AudioHighPassFilter>();
+
         if (otherPlayerHighPassFilter == null)
         {
             otherPlayerHighPassFilter = players.First(playerReference => playerReference.PlayerID != callerPlayerID).Player.GetComponent<AudioHighPassFilter>();

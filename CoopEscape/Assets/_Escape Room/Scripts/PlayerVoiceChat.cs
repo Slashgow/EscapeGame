@@ -46,27 +46,43 @@ public class PlayerVoiceChat : NetworkBehaviour
             
     }
 
+    private void OnEnable() => playerInputHandler.OnTriggerPushToTalk += PlayerInputHandler_OnTriggerPushToTalk;
+
+    private void OnDisable() => playerInputHandler.OnTriggerPushToTalk -= PlayerInputHandler_OnTriggerPushToTalk;
+
+    private void PlayerInputHandler_OnTriggerPushToTalk()
+    {
+        if (BindingManager.Instance.HoldToTalk)
+            return;
+
+        if (isPushToTalkRecording)
+        {
+            StopRecording();
+            return;
+        }
+        else if (!isPushToTalkRecording)
+        {
+            StartRecording();
+        }
+    }
+
     private void Update()
     {
         if (!isPushToTalkRecording && playerInputHandler.PushToTalkTriggered)
         {
-            SteamUser.StartVoiceRecording();
-            ToggleReceiverAudioFilters(PlayerIDHelper.Instance.GetOtherPlayerID(owner), true);
-            Debug.Log("Start Recording");
-            isPushToTalkRecording = true;
+            if (!BindingManager.Instance.HoldToTalk)
+                return;
+
             StartRecording();
-            OnStartPushToTalk?.Invoke();
         }
         else if(isPushToTalkRecording && !playerInputHandler.PushToTalkTriggered)
         {
-            if(!isProximityChatRecording)
-                SteamUser.StopVoiceRecording();
-            Debug.Log("Stop Recording");
-            ToggleReceiverAudioFilters(PlayerIDHelper.Instance.GetOtherPlayerID(owner), false);
-            isPushToTalkRecording = false;
+            if (!BindingManager.Instance.HoldToTalk)
+                return;
+
             StopRecording();
-            OnEndPushToTalk?.Invoke();
         }
+
         else if (isPushToTalkRecording)
         {
             HandleVoiceRecording(false);
@@ -90,6 +106,28 @@ public class PlayerVoiceChat : NetworkBehaviour
         {
             HandleVoiceRecording(true);
         }
+    }
+
+    private void StopRecording()
+    {
+        if (!isProximityChatRecording)
+            SteamUser.StopVoiceRecording();
+
+        Debug.Log("Stop Recording");
+        ToggleReceiverAudioFilters(PlayerIDHelper.Instance.GetOtherPlayerID(owner), false);
+        isPushToTalkRecording = false;
+        PlayStopSFX();
+        OnEndPushToTalk?.Invoke();
+    }
+
+    private void StartRecording()
+    {
+        SteamUser.StartVoiceRecording();
+        ToggleReceiverAudioFilters(PlayerIDHelper.Instance.GetOtherPlayerID(owner), true);
+        Debug.Log("Start Recording");
+        isPushToTalkRecording = true;
+        PlayStartSFX();
+        OnStartPushToTalk?.Invoke();
     }
 
     private void HandleVoiceRecording(bool writeOnSenderAudioSource)
@@ -141,14 +179,14 @@ public class PlayerVoiceChat : NetworkBehaviour
     }
 
     [ObserversRpc]
-    public void StartRecording()
+    public void PlayStartSFX()
     {
         Debug.Log("Start record - play talkie sound");
         talkie.TalkieSFXAudioSource.Play();
     }
 
     [ObserversRpc]
-    public void StopRecording()
+    public void PlayStopSFX()
     {
         Debug.Log("Stop record - play talkie sound");
         talkie.TalkieSFXAudioSource.Play();

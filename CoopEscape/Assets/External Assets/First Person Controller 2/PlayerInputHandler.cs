@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,6 +35,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool SprintTriggered {  get; private set; }
     public bool PushToTalkTriggered { get; private set; }
 
+    public event Action OnTriggerPushToTalk = delegate { };
 
     private void Awake()
     {
@@ -63,7 +65,11 @@ public class PlayerInputHandler : MonoBehaviour
         sprintAction.performed += inputInfo => SprintTriggered = true;
         sprintAction.canceled += inputInfo => SprintTriggered = false;
 
-        pushToTalkAction.performed += inputInfo => PushToTalkTriggered = true;
+        pushToTalkAction.performed += inputInfo =>
+        {
+            PushToTalkTriggered = true;
+            OnTriggerPushToTalk?.Invoke();
+        };
         pushToTalkAction.canceled += inputInfo => PushToTalkTriggered = false;
     }
 
