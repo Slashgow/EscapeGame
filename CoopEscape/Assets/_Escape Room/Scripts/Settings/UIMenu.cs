@@ -11,8 +11,9 @@ public class UIMenu : MonoBehaviour
     }
     private void Update()
     {
-        if (sceneInputHandler.IsToggleSettingsPressed)
+        if (sceneInputHandler.IsToggleSettingsPressed && !InteractableCursorZoneManager.Instance.IsInInteractableCursorZone)
         {
+            Debug.Log("open settings menu");
             bool isOpen = canvasGroup.alpha > 0f;
             ToggleMenuSettings(!isOpen);
         }

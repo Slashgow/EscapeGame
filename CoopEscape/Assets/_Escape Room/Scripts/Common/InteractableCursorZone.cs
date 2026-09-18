@@ -16,17 +16,20 @@ public class InteractableCursorZone : AInteractable
     private void OnEnable() => quitFixButton.onClick.AddListener(QuitMenu);
     private void OnDisable() => quitFixButton.onClick.RemoveListener(QuitMenu);
 
-    private void QuitMenu()
+    public void QuitMenu()
     {
         GameManager.Instance.IsInMenu = false;
+        InteractableCursorZoneManager.Instance.QuitCursorZone();
         cursorUnlocker.HideCursor();
         //this.gameObject.SetActive(false);
+        Debug.Log("quit menu");
     }
 
     public override void Interact()
     {
         OnInteract?.Invoke();
         GameManager.Instance.IsInMenu = true;
+        InteractableCursorZoneManager.Instance.EnterCursorZone(this);
         cursorUnlocker.ShowCursor();
         FirstPersonController.localFirstPersonController.MovePlayerTo(fixTransform, timeToMove, easing);
         FirstPersonController.localFirstPersonController.MoveVerticalRotationTo(verticalRotationCamera.rotation, timeToMove, easing);
